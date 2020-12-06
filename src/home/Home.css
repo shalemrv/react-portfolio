@@ -1,0 +1,102 @@
+.home {
+	position: relative;
+	width: 100vw;
+	overflow-y: hidden;
+}
+
+.customImageFadeContainer {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100;
+}
+.customImageFadeContainer .slide img {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	object-fit: cover;
+	background: none;
+	z-index: -1;
+}
+
+.customImageFadeContainer .slide1 {
+	animation: fade1 70s infinite;
+}
+.customImageFadeContainer .slide2 {
+	animation: fade2 70s infinite;
+}
+.customImageFadeContainer .slide3 {
+	animation: fade3 70s infinite;
+}
+.customImageFadeContainer .slide4 {
+	animation: fade4 70s infinite;
+}
+.customImageFadeContainer .slide5 {
+	animation: fade5 70s infinite;
+}
+.customImageFadeContainer .slide6 {
+	animation: fade6 70s infinite;
+}
+.customImageFadeContainer .slide7 {
+	animation: fade7 70s infinite;
+}
+
+.overviewContainer {
+	display: grid;
+	width: 100vw;
+	max-height: calc(100vh - 5rem);
+	z-index: 10000;
+	overflow: hidden;
+}
+.nameTitleSvgContainer {
+	padding: 0 60% 0 5%;
+	z-index: 1000;
+}
+.overview img {
+	width: 100%;
+}
+.overviewContainer svg,
+.overviewElementsContainer svg {
+	width: 100%;
+}
+.overviewElementsContainer {
+	z-index: 1000;
+	display: flex;
+	justify-content: space-around;
+}
+.overviewElementsContainer > div {
+	width: 15%;
+}
+
+.pageDividerSvg {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 9999;
+	width: 100vw;
+}
+.pageDividerSvg svg {
+	width: 100vw;
+	position: absolute;
+	bottom: -5px;
+}
+
+@media screen and (max-width: 980px) {
+	.nameTitleSvgContainer {
+		padding: 0 25% 0 5%;
+	}
+	.overviewElementsContainer > div {
+		width: 20%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.nameTitleSvgContainer {
+		padding: 0 7% 0 7%;
+	}
+	.overviewElementsContainer > div {
+		width: 25%;
+	}
+}

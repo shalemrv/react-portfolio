@@ -1,0 +1,56 @@
+import React, { Component } from 'react';
+import mylogo from "../assets/img/mylogo.png";
+import './Header.css';
+
+export class Header extends Component {
+	
+	constructor(props){
+		super(props);
+
+		window.addEventListener("scroll", ()=>{
+			var header = document.querySelector("header");
+			header.classList.toggle("sticky", window.scrollY > 80);
+		});
+	}
+
+	toggleNavMenu(){
+		const navUl = document.querySelector(".nav-items-ul");
+		navUl.classList.toggle('open');
+	}
+
+	render() {
+		return (
+			<header>
+				<nav>
+					<div className="page-logo">
+						<img src={mylogo} alt="Shall Aim"/>
+					</div>
+					<ul className="nav-items-ul">
+						<li>
+							<a onClick={this.toggleNavMenu} href="#home">HOME</a>
+						</li>
+						<li>
+							<a onClick={this.toggleNavMenu} href="#about">ABOUT</a>
+						</li>
+						<li>
+							<a onClick={this.toggleNavMenu} href="#projects">PROJECTS</a>
+						</li>
+						<li>
+							<a onClick={this.toggleNavMenu} href="#services">SERVICES</a>
+						</li>
+						<li>
+							<a onClick={this.toggleNavMenu} href="#contact">CONTACT</a>
+						</li>
+					</ul>
+					<div className="hamburger" onClick={this.toggleNavMenu}>
+						<div className="line1"></div>
+						<div className="line2"></div>
+						<div className="line3"></div>
+					</div>
+				</nav>
+			</header>
+		);
+	}
+}
+
+export default Header;
