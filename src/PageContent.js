@@ -4,6 +4,7 @@ import axios from 'axios';
 import Home from './home/Home';
 import About from './about/About';
 import Projects from './projects/Projects';
+import Services from './services/Services';
 
 import {ReactComponent as Divider2Svg} from './assets/img/svg/dividers/2.svg';
 import {ReactComponent as Divider3Svg} from './assets/img/svg/dividers/3.svg';
@@ -65,6 +66,22 @@ export class PageContent extends Component {
 					{
 						this.state.portfolioData.projectsList &&
 						<Projects projectsList={this.state.portfolioData.projectsList}/>
+					}
+					{
+						this.state.portfolioData.projectsList &&
+						<div className="sectionDividerSvg" style={{background: '#3c0054'}}>
+							<Divider3Svg />
+						</div>
+					}
+					{
+						this.state.portfolioData.servicesList &&
+						<Services servicesList={this.state.portfolioData.servicesList}/>
+					}
+					{
+						this.state.portfolioData.servicesList &&
+						<div className="sectionDividerSvg" style={{background: '#3c0054'}}>
+							<Divider4Svg />
+						</div>
 					}
 				</div>
 			);

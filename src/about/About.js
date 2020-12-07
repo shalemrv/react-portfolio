@@ -11,13 +11,13 @@ class About extends Component{
 	
 	render(){
 		return (
-			<section id={"about"} className="cont-view">
-				<div className="flex-center" style={{gridArea : 'hd'}}>
-					<div className="view-heading view-heading-about">
+			<section id={"about"}>
+				<div className="text-align-center">
+					<div className="view-heading">
 						ABOUT
 					</div>
 				</div>
-				<div id={"about-card"} style={{gridArea : 'cBody'}}>
+				<div id={"about-card"}>
 					<div id={"about-details"}>
 						<div id={"about-myself-1"}>
 							<div id={"skills-div"}>

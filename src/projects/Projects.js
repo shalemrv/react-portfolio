@@ -3,17 +3,18 @@ import React, { Component } from 'react';
 import websitePng from "../assets/img/projects/website.png";
 import githubPng from "../assets/img/projects/github.png";
 
-import msAccess from "../assets/img/serv/msAccess.png";
-import angular1 from "../assets/img/serv/angular1.png";
-import angular9 from "../assets/img/serv/angular9.png";
-import express from  "../assets/img/serv/expressjs.png";
-import htmlCssJs from  "../assets/img/serv/htmlCssJs.png";
-import mongodb from  "../assets/img/serv/mongodb.png";
-import mysql from  "../assets/img/serv/mysql.png";
-import node from  "../assets/img/serv/node.png";
-import php from  "../assets/img/serv/php.png";
-import vb from  "../assets/img/serv/vb.png";
-import vstud from  "../assets/img/serv/vstud.png";
+import msAccessPng from "../assets/img/serv/msAccess.png";
+import angular1Png from "../assets/img/serv/angular1.png";
+import angular9Png from "../assets/img/serv/angular9.png";
+import expressPng from  "../assets/img/serv/expressjs.png";
+import htmlCssJsPng from  "../assets/img/serv/htmlCssJs.png";
+import mongodbPng from  "../assets/img/serv/mongodb.png";
+import mysqlPng from  "../assets/img/serv/mysql.png";
+import nodePng from  "../assets/img/serv/node.png";
+import phpPng from  "../assets/img/serv/php.png";
+import vbPng from  "../assets/img/serv/vb.png";
+import vstudPng from  "../assets/img/serv/vstud.png";
+import htmlPng from  "../assets/img/serv/html.png";
 
 
 import './Projects.css';
@@ -23,17 +24,18 @@ export class Projects extends Component {
 	state = {
 		projectsList : this.props.projectsList,
 		images : {
-			msAccess	: msAccess,
-			angular1	: angular1,
-			angular9	: angular9,
-			express		: express,
-			htmlCssJs	: htmlCssJs,
-			mongodb		: mongodb,
-			mysql		: mysql,
-			node		: node,
-			php			: php,
-			vb			: vb,
-			vstud		: vstud
+			msAccess	: msAccessPng,
+			angular1	: angular1Png,
+			angular9	: angular9Png,
+			express		: expressPng,
+			htmlCssJs	: htmlCssJsPng,
+			mongodb		: mongodbPng,
+			mysql		: mysqlPng,
+			node		: nodePng,
+			php			: phpPng,
+			vb			: vbPng,
+			vstud		: vstudPng,
+			html		: htmlPng
 		}
 	};
 
@@ -41,8 +43,8 @@ export class Projects extends Component {
 		return (
 			this.state.projectsList &&
 			<section id={"projects"} className="cont-view view-grid">
-				<div className="flex-center" style={{gridArea: 'hd'}}>
-					<div className="view-heading view-heading-projects">
+				<div className="text-align-center">
+					<div className="view-heading">
 						PROJECTS
 					</div>
 				</div>
@@ -79,13 +81,13 @@ export class Projects extends Component {
 										<div className="links-flex-container">
 											{
 												!!project.links.live.length &&
-												<a href={project.links.live} title="Live Version" target="_blank">
+												<a className="websiteLink" href={project.links.live} title="Live Version" target="_blank">
 													<img src={websitePng}/> 
 												</a>
 											}
 											{
 												!!project.links.code.length &&
-												<a href={project.links.code} title="Source Code" target="_blank">
+												<a className="githubLink" href={project.links.code} title="Source Code" target="_blank">
 													<img src={githubPng}/> 
 												</a>
 											}
