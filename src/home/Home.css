@@ -1,10 +1,10 @@
-.home {
+#home {
 	position: relative;
 	width: 100vw;
 	overflow-y: hidden;
 }
 
-.customImageFadeContainer {
+#customImageFadeContainer {
 	width: 100vw;
 	height: 100vh;
 	position: absolute;
@@ -12,7 +12,7 @@
 	left: 0;
 	z-index: 100;
 }
-.customImageFadeContainer .slide img {
+#customImageFadeContainer .slide img {
 	position: absolute;
 	width: 100vw;
 	height: 100vh;
@@ -21,52 +21,52 @@
 	z-index: -1;
 }
 
-.customImageFadeContainer .slide1 {
+#customImageFadeContainer .slide1 {
 	animation: fade1 70s infinite;
 }
-.customImageFadeContainer .slide2 {
+#customImageFadeContainer .slide2 {
 	animation: fade2 70s infinite;
 }
-.customImageFadeContainer .slide3 {
+#customImageFadeContainer .slide3 {
 	animation: fade3 70s infinite;
 }
-.customImageFadeContainer .slide4 {
+#customImageFadeContainer .slide4 {
 	animation: fade4 70s infinite;
 }
-.customImageFadeContainer .slide5 {
+#customImageFadeContainer .slide5 {
 	animation: fade5 70s infinite;
 }
-.customImageFadeContainer .slide6 {
+#customImageFadeContainer .slide6 {
 	animation: fade6 70s infinite;
 }
-.customImageFadeContainer .slide7 {
+#customImageFadeContainer .slide7 {
 	animation: fade7 70s infinite;
 }
 
-.overviewContainer {
+#overviewContainer {
 	display: grid;
 	width: 100vw;
 	max-height: calc(100vh - 5rem);
 	z-index: 10000;
 	overflow: hidden;
 }
-.nameTitleSvgContainer {
+#nameTitleSvgContainer {
 	padding: 0 60% 0 5%;
 	z-index: 1000;
 }
 .overview img {
 	width: 100%;
 }
-.overviewContainer svg,
-.overviewElementsContainer svg {
+#overviewContainer svg,
+#overviewElementsContainer svg {
 	width: 100%;
 }
-.overviewElementsContainer {
+#overviewElementsContainer {
 	z-index: 1000;
 	display: flex;
 	justify-content: space-around;
 }
-.overviewElementsContainer > div {
+#overviewElementsContainer > div {
 	width: 15%;
 }
 
@@ -84,19 +84,19 @@
 }
 
 @media screen and (max-width: 980px) {
-	.nameTitleSvgContainer {
+	#nameTitleSvgContainer {
 		padding: 0 25% 0 5%;
 	}
-	.overviewElementsContainer > div {
+	#overviewElementsContainer > div {
 		width: 20%;
 	}
 }
 
 @media screen and (max-width: 768px) {
-	.nameTitleSvgContainer {
+	#nameTitleSvgContainer {
 		padding: 0 7% 0 7%;
 	}
-	.overviewElementsContainer > div {
+	#overviewElementsContainer > div {
 		width: 25%;
 	}
 }

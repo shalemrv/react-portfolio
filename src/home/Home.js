@@ -20,8 +20,8 @@ import {ReactComponent as ProjectsSvg} from '../assets/img/svg/overview-projects
 export class Home extends Component {
 	render(){
 		return (
-			<section className="home" class="cont-view">
-				<div className="customImageFadeContainer">
+			<section id={"home"} class="cont-view">
+				<div id={"customImageFadeContainer"}>
 					<div className="slide slide1">
 						<img src={cImage1} alt="Landscape 1"/>
 					</div>
@@ -48,11 +48,11 @@ export class Home extends Component {
 					</div>
 				</div>
 
-				<div className="overviewContainer">
-					<div className="nameTitleSvgContainer">
+				<div id={"overviewContainer"}>
+					<div id={"nameTitleSvgContainer"}>
 						<ProfileSvg />
 					</div>
-					<div className="overviewElementsContainer">
+					<div id={"overviewElementsContainer"}>
 						<div className="overview">
 							<ExperienceSvg />
 						</div>

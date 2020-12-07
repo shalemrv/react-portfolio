@@ -8,21 +8,21 @@ class About extends Component{
 	state = {
 		skills : this.props.skills
 	};
-
+	
 	render(){
 		return (
-			<section className="about cont-view">
+			<section id={"about"} className="cont-view">
 				<div className="flex-center" style={{gridArea : 'hd'}}>
 					<div className="view-heading view-heading-about">
 						ABOUT
 					</div>
 				</div>
-				<div className="about-card" style={{gridArea : 'cBody'}}>
-					<div className="about-details">
-						<div className="about-myself-1">
-							<div className="skills-div">
+				<div id={"about-card"} style={{gridArea : 'cBody'}}>
+					<div id={"about-details"}>
+						<div id={"about-myself-1"}>
+							<div id={"skills-div"}>
 								<div className="about-myself--label">Skills : </div>
-								<div className="skills-list">
+								<div id={"skills-list"}>
 									<span className="skill">Creativity</span>
 									<span className="skill">Presentation</span>
 									<span className="skill">Problem Solving</span>
@@ -31,33 +31,33 @@ class About extends Component{
 							</div>
 						</div>
 
-						<div className="t-skill-qualities-div">
-							<div className="technical-skills">
+						<div id={"t-skill-qualities-div"}>
+							<div id={"technical-skills"}>
 								<div className="about-myself--label-c">TECHNICAL SKILLS</div>
 								<div className="text-center">
 									<div className="skills-sub-label">Advanced</div>
 									{
-										this.skills.advanced.map((s)=>{
-											<span className="t-skill">{s}</span>
+										this.state.skills.advanced.map((s)=>{
+											return <span className="t-skill">{s}</span>
 										})
 									}
 								</div>
 								<div className="text-center">
 									<div className="skills-sub-label mt-2">Intermediate</div>
 									{
-										this.skills.intermediate.map((s)=>{
-											<span className="t-skill">{s}</span>
+										this.state.skills.intermediate.map((s)=>{
+											return <span className="t-skill">{s}</span>
 										})
 									}
 								</div>
 								<div className="text-center">
 									<div className="skills-sub-label mt-1" style={{marginBottom : 0}}>Basic</div>
 									<span className="basic-skill">
-										{this.skills.basic.join(', ')}
+										{this.state.skills.basic.join(', ')}
 									</span>
 								</div>
 							</div>
-							<ul className="qualities-container">
+							<ul id={"qualities-container"}>
 								<li className="qualities--li">
 									Highly motivated, determined person. 
 								</li>
@@ -79,26 +79,26 @@ class About extends Component{
 							</ul>
 						</div>
 
-						<div className="about-myself-2">
-							<div className="hobbies-div">
+						<div id={"about-myself-2"}>
+							<div id={"hobbies-div"}>
 								<div className="about-myself--label">Hobbies : </div>
-								<div className="hobbies-list">
-									<span className="hobby">📸 Photography,</span>
-									<span className="hobby">🚲 Riding,</span>
-									<span className="hobby">🚂 Travelling,</span>
-									<span className="hobby">🎮 Gaming,</span>
+								<div id={"hobbies-list"}>
+									<span className="hobby">📸 Photography,</span>										
+									<span className="hobby">🚲 Riding,</span>										
+									<span className="hobby">🚂 Travelling,</span>										
+									<span className="hobby">🎮 Gaming,</span>										
 									<span className="hobby">🌟 Astronomy</span>
 								</div>
 							</div>
 						</div>
 					</div>
 
-					<div className="experience-container">
-						<div className="experience-header">
-							<div className="exp-heading" className="flex-center">
+					<div id={"experience-container"}>
+						<div id={"experience-header"}>
+							<div id={"exp-heading"} className="flex-center">
 								Experience
 							</div>
-							<div className="resume-download" className="flex-center">
+							<div id={"resume-download"} className="flex-center">
 								<a className="btn btn-info" href="src/experience/resume.pdf" download="Resume_ShalemRajV_202008_August.pdf"><b>Download Resume</b></a>
 							</div>
 						</div>

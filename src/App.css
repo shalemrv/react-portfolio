@@ -1,3 +1,71 @@
+@keyframes spinCircle {
+	0% {
+		transform: rotate(0);
+		width: 5rem;
+		height: 5rem;
+	}
+
+	10% {
+		transform: rotate(36deg);
+		width: 6rem;
+		height: 6rem;
+	}
+
+	20% {
+		transform: rotate(72deg);
+		width: 5.5rem;
+		height: 5.5rem;
+	}
+
+	30% {
+		transform: rotate(108deg);
+		width: 6.5rem;
+		height: 6.5rem;
+	}
+
+	40% {
+		transform: rotate(144deg);
+		width: 7rem;
+		height: 7rem;
+	}
+
+	50% {
+		transform: rotate(180deg);
+		width: 7.5rem;
+		height: 7.5rem;
+	}
+
+	60% {
+		transform: rotate(216deg);
+		width: 7rem;
+		height: 7rem;
+	}
+
+	70% {
+		transform: rotate(252deg);
+		width: 6.5rem;
+		height: 6.5rem;
+	}
+
+	80% {
+		transform: rotate(288deg);
+		width: 6rem;
+		height: 6rem;
+	}
+
+	90% {
+		transform: rotate(324deg);
+		width: 5.5rem;
+		height: 5.5rem;
+	}
+
+	100% {
+		transform: rotate(360deg);
+		width: 5rem;
+		height: 5rem;
+	}
+}
+
 .page-loader-container {
 	display: flex;
 	justify-content: center;
@@ -6,9 +74,11 @@
 	width: 100vw;
 	height: 100vh;
 	background: white;
+	z-index: 999999;
 }
 
 .page-loader {
+	opacity: 0.75;
 	width: 5rem;
 	height: 5rem;
 	border-radius: 50%;
@@ -20,4 +90,5 @@
 		rgba(166, 6, 152, 1) 66%,
 		rgba(0, 212, 255, 1) 100%
 	);
+	animation: spinCircle 1s infinite linear;
 }
