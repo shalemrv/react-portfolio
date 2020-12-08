@@ -37,16 +37,16 @@ class About extends Component{
 								<div className="text-center">
 									<div className="skills-sub-label">Advanced</div>
 									{
-										this.state.skills.advanced.map((s)=>{
-											return <span className="t-skill">{s}</span>
+										this.state.skills.advanced.map((s, i)=>{
+											return <span className="t-skill" key={`adSk${i}`}>{s}</span>
 										})
 									}
 								</div>
 								<div className="text-center">
 									<div className="skills-sub-label mt-2">Intermediate</div>
 									{
-										this.state.skills.intermediate.map((s)=>{
-											return <span className="t-skill">{s}</span>
+										this.state.skills.intermediate.map((s, i)=>{
+											return <span className="t-skill" key={`intSk${i}`}>{s}</span>
 										})
 									}
 								</div>

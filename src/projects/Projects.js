@@ -54,7 +54,7 @@ export class Projects extends Component {
 							let tempClassName = (project.links.exist)? "" : "without-links"
 
 							return (
-								<div className={tempClassName}>
+								<div className={tempClassName} key={`project${index}`}>
 									<div className="project-card-new">
 										<div className="tech-flex-container">
 											{

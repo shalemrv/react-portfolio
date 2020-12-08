@@ -20,7 +20,7 @@ import {ReactComponent as ProjectsSvg} from '../assets/img/svg/overview-projects
 export class Home extends Component {
 	render(){
 		return (
-			<section id={"home"} class="cont-view">
+			<section id={"home"} className="cont-view">
 				<div id={"customImageFadeContainer"}>
 					<div className="slide slide1">
 						<img src={cImage1} alt="Landscape 1"/>

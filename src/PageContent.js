@@ -5,6 +5,7 @@ import Home from './home/Home';
 import About from './about/About';
 import Projects from './projects/Projects';
 import Services from './services/Services';
+import Contact from './contact/Contact';
 
 import {ReactComponent as Divider2Svg} from './assets/img/svg/dividers/2.svg';
 import {ReactComponent as Divider3Svg} from './assets/img/svg/dividers/3.svg';
@@ -83,6 +84,7 @@ export class PageContent extends Component {
 							<Divider4Svg />
 						</div>
 					}
+					<Contact />
 				</div>
 			);
 		}
