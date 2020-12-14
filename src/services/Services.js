@@ -48,11 +48,11 @@ export class Services extends Component {
 				<div id={"serv-cards-container"}>
 					{
 						this.state.servicesList.map(
-							(service)=>{
-								return <div className="serv-cards">
+							(service, sIndex)=>{
+								return <div className="serv-cards" key={`service${sIndex}`}>
 									<div className="service-card-new">
 										<div className="service-img-container">
-											<img className="service-tech-img" src={this.state.images[service.img]}/>
+											<img className="service-tech-img" src={this.state.images[service.img]} alt={service.title}/>
 										</div>
 										<div>
 											<div className="service-card-title">

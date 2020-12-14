@@ -50,29 +50,29 @@ export class Projects extends Component {
 				</div>
 				<div id={"proj-cards"}>
 					{
-						this.state.projectsList.map((project, index)=>{
+						this.state.projectsList.map((project, prIndex)=>{
 							let tempClassName = (project.links.exist)? "" : "without-links"
 
 							return (
-								<div className={tempClassName} key={`project${index}`}>
+								<div className={tempClassName} key={`project${prIndex}`}>
 									<div className="project-card-new">
 										<div className="tech-flex-container">
 											{
-												project.technologies.map((techImg)=>{
-													return <img src={this.state.images[techImg]}/>
+												project.technologies.map((techImg, techIndex)=>{
+													return <img src={this.state.images[techImg]} alt={techImg} key={`proj${prIndex}techImg${techIndex}`}/>
 												})
 											}
 										</div>
 										<div>
 											<div className="project-title">
 												<h1>{project.pName}</h1>
-												<span className="project-number">{index+1} / {this.state.projectsList.length}</span>
+												<span className="project-number">{prIndex+1} / {this.state.projectsList.length}</span>
 											</div>
 											<div className="project-desc-container">
 												<ul>
 													{
-														project.detailsList.map((details)=>{
-															return <li>{details}</li>
+														project.detailsList.map((details, descIndex)=>{
+															return <li key={`proj${prIndex}desc${descIndex}`}>{details}</li>
 														})
 													}
 												</ul>
@@ -81,14 +81,14 @@ export class Projects extends Component {
 										<div className="links-flex-container">
 											{
 												!!project.links.live.length &&
-												<a className="websiteLink" href={project.links.live} title="Live Version" target="_blank">
-													<img src={websitePng}/> 
+												<a className="websiteLink" rel="noreferrer" href={project.links.live} title="Live Version" target="_blank">
+													<img src={websitePng} alt="Web"/> 
 												</a>
 											}
 											{
 												!!project.links.code.length &&
-												<a className="githubLink" href={project.links.code} title="Source Code" target="_blank">
-													<img src={githubPng}/> 
+												<a className="githubLink" rel="noreferrer" href={project.links.code} title="Source Code" target="_blank">
+													<img src={githubPng} alt="Git"/> 
 												</a>
 											}
 										</div>

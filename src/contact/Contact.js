@@ -6,7 +6,7 @@ import axios from 'axios';
 import GithubPng from '../assets/img/contact/github.png';
 import FbPng from '../assets/img/contact/fb.png';
 import InstaPng from '../assets/img/contact/insta.png';
-import LinkedinPng from '../assets/img/contact/linkedin.png';
+import LinkedInPng from '../assets/img/contact/linkedin.png';
 import PhonePng from '../assets/img/contact/phone.png';
 import EmailPng from '../assets/img/contact/email.png';
 import WhatsappPng from '../assets/img/contact/whatsapp.png';
@@ -22,30 +22,33 @@ export class Contact extends Component {
 			name	: "",
 			email	: "",
 			body	: ""
-		}
+		},
+		ipDetails : this.props.ipDetails
 	};
 
 	constructor(props){
 		super(props);
-		this.updateCompany		= this.updateCompany.bind(this);
-		this.updateName			= this.updateName.bind(this);
-		this.updateEmail		= this.updateEmail.bind(this);
-		this.updateBody			= this.updateBody.bind(this);
-		this.sanitizeAllInputs	= this.sanitizeAllInputs.bind(this);
-		this.submitMessage		= this.submitMessage.bind(this);
+		this.updateCompany			= this.updateCompany.bind(this);
+		this.updateName				= this.updateName.bind(this);
+		this.updateEmail			= this.updateEmail.bind(this);
+		this.updateBody				= this.updateBody.bind(this);
+		this.submitMessage			= this.submitMessage.bind(this);
+		this.handlePhoneClick		= this.handlePhoneClick.bind(this);
+		this.handleEmailClick		= this.handleEmailClick.bind(this);
+		this.handleWhatsappClick	= this.handleWhatsappClick.bind(this);
 	}
 
 	cleanse(method, input){
-		// console.log(`cleanse('${method}', '${input}')`);
 
 		if(!input){
 			return "";
 		}
 
 		switch(method){
-			case "alphaSp"		: return input.replaceAll(/[^A-Za-z\s]/g, "").replaceAll(/\s\s+/g, ' ');;
-			case "alphaNumSp"	: return input.replaceAll(/[^A-Za-z0-9\s]/g, "").replaceAll(/\s\s+/g, ' ');;
-			case "sentenceSp"	: return input.replaceAll(/[^A-Za-z0-9\s]/g, "").replaceAll(/\s\s+/g, ' ');;
+			case "alphaSp"		: return input.replaceAll(/[^A-Za-z\s]/g, "").replaceAll(/\s\s+/g, ' ');
+			case "alphaNumSp"	: return input.replaceAll(/[^A-Za-z0-9\s]/g, "").replaceAll(/\s\s+/g, ' ');
+			case "sentenceSp"	: return input.replaceAll(/[^A-Za-z0-9\s]/g, "").replaceAll(/\s\s+/g, ' ');
+			default	: return "";
 		}
 	}
 
@@ -59,30 +62,16 @@ export class Contact extends Component {
 			}
 		});
 	}
-
-	sanitizeAllInputs(){
-		let newInputs = {
-			company	: this.cleanse("alphaNumSp", this.state.newMessage.company),
-			name	: this.cleanse("alphaSp", this.state.newMessage.name),
-			body	: this.cleanse("sentenceSp", this.state.newMessage.body)
-		};
-		console.log("newInputs");
-		console.log(newInputs);
-		this.setState(prevState => ({
-			...prevState,
-			newMessage : {
-				...prevState.newMessage,
-				company	: this.cleanse("alphaNumSp", prevState.newMessage.company),
-				name	: this.cleanse("alphaSp", prevState.newMessage.name),
-				body	: this.cleanse("sentenceSp", prevState.newMessage.body)
-			}
-		}));
+	
+	copyToClipBoard(txt){
+		navigator.clipboard.writeText(txt);
 	}
 
 	updateCompany(event){
 		this.setState({
 			newMessage : {
-				company : event.target.value
+				...this.state.newMessage,
+				company : this.cleanse("alphaNumSp", event.target.value)
 			}
 		});
 	}
@@ -90,7 +79,8 @@ export class Contact extends Component {
 	updateName(event){
 		this.setState({
 			newMessage : {
-				name : event.target.value
+				...this.state.newMessage,
+				name : this.cleanse("alphaSp", event.target.value)
 			}
 		});
 	}
@@ -98,6 +88,7 @@ export class Contact extends Component {
 	updateEmail(event){
 		this.setState({
 			newMessage : {
+				...this.state.newMessage,
 				email : event.target.value
 			}
 		});
@@ -106,7 +97,8 @@ export class Contact extends Component {
 	updateBody(event){
 		this.setState({
 			newMessage : {
-				body : event.target.value
+				...this.state.newMessage,
+				body : this.cleanse("sentenceSp", event.target.value)
 			}
 		});
 	}
@@ -132,7 +124,7 @@ export class Contact extends Component {
 		swal("Valid Form Details");
 
 		axios.post(
-			`http://127.0.0.1:11111/api/messages.php?action=add`,
+			`/api/messages.php?action=add`,
 			this.state.newMessage
 		)
 		.then(httpResponse=>{
@@ -151,27 +143,148 @@ export class Contact extends Component {
 		})
 	}
 
+	createAtagAndClick(href, newTab=false){
+		let aTag = document.createElement("a");
+		aTag.setAttribute("rel", "noreferrer");
+		if(newTab){
+			aTag.setAttribute("target", "_blank");
+		}
+		aTag.setAttribute("href", href);
+		aTag.click();
+	}
+
+	handlePhoneClick(){
+		var contactInfo = "+919060317334";
+
+		swal(
+			"Mobile Number",
+			"What would you like to do?",
+			{
+				buttons: {
+					cancel : "Cancel",
+					clipboard : {
+						text: "Copy to Clipboard",
+						value: "clipboard"
+					},
+					appMode : {
+						text: "Open in App",
+						value: "appMode"
+					}
+				}
+			}
+		)
+		.then(
+			(value) => {
+				switch (value){
+					case "clipboard":
+						this.copyToClipBoard(contactInfo);
+						swal("", "Successfully copied to clipboard. Paste anywhere !", "success");
+						break;
+
+					case "appMode":
+						this.createAtagAndClick(`tel:${contactInfo}`);
+						break;
+
+					default:
+						swal("Cancelled", "Nothing happened!", "info");
+				}
+		});
+	}
+
+	handleEmailClick(){
+		var contactInfo = "shalemrv@gmail.com";
+		swal(
+			"Email",
+			"What would you like to do?",
+			{
+				buttons: {
+					cancel : "Cancel",
+					clipboard : {
+						text: "Copy to Clipboard",
+						value: "clipboard"
+					},
+					appMode : {
+						text: "Open in App",
+						value: "appMode"
+					}
+				}
+			}
+		)
+		.then(
+			(value) => {
+				switch (value){
+					case "clipboard":
+						this.copyToClipBoard(contactInfo);
+						swal("", "Successfully copied to clipboard. Paste anywhere !", "success");
+						break;
+
+					case "appMode":
+						this.createAtagAndClick(`mailto:${contactInfo}?Subject=Portfolio%20-%20Get%20in%20Touch&body=Hi%20Shalem%21%0A%0AWe%27ve%20found%20your%20portfolio%20to%20be%20interesting.%0APlease%20get%20in%20touch%20with%20us.%0AHere%27s%20our%20contact%20information%3A%0A%0AMobile%20Number%3A%20%0AWebsite%3A%20%0A%0AThank%20you.%0A%0ARegards%2C%0A`);
+						break;
+
+					default:
+						swal("Cancelled", "Nothing happened!", "info");
+				}
+		});
+	}
+	handleWhatsappClick(){
+		var contactInfo = "+919060317334";
+		swal(
+			"WhatsApp",
+			"What would you like to do?",
+			{
+				buttons: {
+					cancel : "Cancel",
+					clipboard : {
+						text: "Copy to Clipboard",
+						value: "clipboard"
+					},
+					appMode : {
+						text: "Open in WhatsApp / WhatsApp Web",
+						value: "appMode"
+					}
+				}
+			}
+		)
+		.then(
+			(value) => {
+				switch (value){
+					case "clipboard":
+						this.copyToClipBoard(contactInfo);
+						swal("", "Successfully copied to clipboard. Paste anywhere !", "success");
+						break;
+
+					case "appMode":
+						this.createAtagAndClick(`https://api.whatsapp.com/send?phone=%2B919060317334&text=Hi%20Shalem%21%0A%0AWe%27ve%20found%20your%20portfolio%20to%20be%20interesting.%0APlease%20get%20in%20touch%20with%20us.%0AHere%27s%20our%20contact%20information.%0AEmail%3A%20%0AWebsite%3A%20%0A%0AThank%20you.%0A%0ARegards%2C%0A`, true);
+						break;
+
+					default:
+						swal("Cancelled", "Nothing happened!", "info");
+				}
+		});
+	}
+
 	render() {
 		return (
 			<section id={"contact"} className="cont-view view-grid">
 				<div className="flex-center">
 					<div className="view-heading view-heading-contact">
-						CONTACT{this.state.someTestKey}
+						CONTACT
 					</div>
 				</div>
 				<div id={"contact-body-container"}>
 					<div id={"social-links-container"}>
-						<a target="_blank" href="https://github.com/shalemrv/">
-							<img src={GithubPng}/>
+						<a target="_blank" rel="noreferrer" href="https://github.com/shalemrv/">
+							<img src={GithubPng} alt="Github"/>
 						</a>
-						<a target="_blank" href="https://www.facebook.com/kingshalemr">
-							<img src={FbPng}/>
+						<a target="_blank" rel="noreferrer" href="https://www.facebook.com/kingshalemr">
+							<img src={FbPng} alt="Facebook"/>
 						</a>
-						<a target="_blank" href="https://www.instagram.com/king_of_peace">
-							<img src={InstaPng}/>
+						<a target="_blank" rel="noreferrer" href="https://www.instagram.com/king_of_peace">
+							<img src={InstaPng} alt="Instagram"/>
 						</a>
-						<a target="_blank" href="https://www.linkedin.com/in/shalemrv">
-							<img src={LinkedinPng}/>
+						<a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/shalemrv">
+							<img src={LinkedInPng} alt="LinkedIn"/>
 						</a>
 					</div>
 					<div id={"contact-details-container"}>
@@ -185,14 +298,13 @@ export class Contact extends Component {
 										type="text"
 										value={this.state.newMessage.company}
 										onChange={this.updateCompany}
-										onBlur={this.sanitizeAllInputs}
 										title="Company Name to be at least 5 characters long."
 										autoComplete="off"
 										required
 									/>
 									<label className="custom-label">
 										<span className="custom-placeholder">
-											Company Name-{this.state.newMessage.company}
+											Company Name
 										</span>
 									</label>
 								</div>
@@ -201,14 +313,13 @@ export class Contact extends Component {
 										type="text"
 										value={this.state.newMessage.name}
 										onChange={this.updateName}
-										onBlur={this.sanitizeAllInputs}
 										title="Name cannot contain numbers or special characters"
 										autoComplete="off"
 										required
 									/>
 									<label className="custom-label">
 										<span className="custom-placeholder">
-											Contact Person (your name)-{this.state.newMessage.name}
+											Contact Person (your name)
 										</span>
 									</label>
 								</div>
@@ -218,13 +329,12 @@ export class Contact extends Component {
 										type="email"
 										value={this.state.newMessage.email}
 										onChange={this.updateEmail}
-										onBlur={this.sanitizeAllInputs}
 										autoComplete="off"
 										required
 									/>
 									<label className="custom-label">
 										<span className="custom-placeholder">
-											Email-{this.state.newMessage.email}
+											Email
 										</span>
 									</label>
 								</div>
@@ -233,13 +343,12 @@ export class Contact extends Component {
 									<textarea
 										value={this.state.newMessage.body}
 										onChange={this.updateBody}
-										onBlur={this.sanitizeAllInputs}
 										autoComplete="off"
 										required
 									></textarea>
 									<label className="custom-label">
 										<span className="custom-placeholder">
-											Your Message-{this.state.newMessage.body}
+											Your Message
 										</span>
 									</label>
 								</div>
@@ -253,45 +362,59 @@ export class Contact extends Component {
 						</div>
 						
 						<div id={"contact-info-container"}>
-							<a
+							<div
 								className="contact-info"
-								href="tel:+919060317334"
-								onclick="copyToClipBoard('+919060317334');"
-								title="Just Click to Copy To Clipboard"
+								onClick={this.handlePhoneClick}
+								title="Copy To Clipboard"
 							>
 								<div className="contact-icon-container">
-									<img src={PhonePng}/>
+									<img src={PhonePng} alt={`Phone`}/>
 								</div>
 								<h3>
 									+91 9060 317 334
 								</h3>
-							</a>
-							<a
+							</div>
+							<div
 								className="contact-info"
-								href="mailto:shalemrv@gmail.com?Subject=Portfolio%20-%20Get%20in%20Touch&body=Hi%20Shalem%21%0A%0AWe%27ve%20found%20your%20portfolio%20to%20be%20interesting.%0APlease%20get%20in%20touch%20with%20us.%0AHere%27s%20our%20contact%20information%3A%0A%0AMobile%20Number%3A%20%0AWebsite%3A%20%0A%0AThank%20you.%0A%0ARegards%2C%0A"
-								onclick="copyToClipBoard('shalemrv@gmail.com');"
+								onClick={this.handleEmailClick}
+								title="Copy to Clipboard"
 							>
 								<div className="contact-icon-container">
-									<img src={EmailPng}/>
+									<img src={EmailPng} alt={`Email`}/>
 								</div>
-								<h3 title="Just Click to Copy to Clipboard">
+								<h3>
 									shalemrv@gmail.com
 								</h3>
-							</a>						
-							<a
+							</div>
+							<div
 								className="contact-info"
-								title="Just Click to Copy To Clipboard"
-								href="https://api.whatsapp.com/send?phone=%2B919060317334&text=Hi%20Shalem%21%0A%0AWe%27ve%20found%20your%20portfolio%20to%20be%20interesting.%0APlease%20get%20in%20touch%20with%20us.%0AHere%27s%20our%20contact%20information.%0AEmail%3A%20%0AWebsite%3A%20%0A%0AThank%20you.%0A%0ARegards%2C%0A"
-								target="_blank"
-								onclick="copyToClipBoard('+919060317334');"
+								title="Copy To Clipboard"
+								onClick={this.handleWhatsappClick}
 							>
 								<div className="contact-icon-container">
-									<img src={WhatsappPng}/>
+									<img src={WhatsappPng} alt={`Whatsapp`}/>
 								</div>
 								<h3>
 									+91 9060 317 334
 								</h3>
-							</a>
+							</div>
+							{
+								!!this.state.ipDetails.exists &&
+								<div>
+									<br/><br/>
+									<div id={"ipDetailsContainer"}>
+										<span id={"ipDetailsLabel"}>IP Details</span>
+										<div id={"ipAddressContainer"}>
+											<span id={"ipAddressLabel"}>IP Address</span>
+											<h3>{this.state.ipDetails.ip}</h3>
+										</div>
+										<div id={"iplocationContainer"}>
+											<span id={"iplocationLabel"}>Location</span>
+											<h3>{this.state.ipDetails.ip}</h3>
+										</div>
+									</div>
+								</div>
+							}
 						</div>
 					</div>
 					<br/><br/><br/>

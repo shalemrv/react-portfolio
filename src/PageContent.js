@@ -26,7 +26,6 @@ export class PageContent extends Component {
 		axios.get(`http://127.0.0.1:11111/api/data.php`)
 		.then(
 			(res) => {
-				console.log(res.data);
 				this.setState({ portfolioData : res.data});
 				window.setTimeout(()=>{
 					this.setState({ dataLoading : false});
@@ -38,8 +37,6 @@ export class PageContent extends Component {
 				window.setTimeout(()=>{
 					this.setState({ dataLoading : false});
 				}, 1500);
-				console.log(`An error has occured`);
-				console.log(res);
 				window.setTimeout(this.getPortfolioData, 2000);
 			}
 		);
@@ -84,7 +81,7 @@ export class PageContent extends Component {
 							<Divider4Svg />
 						</div>
 					}
-					<Contact />
+					<Contact ipDetails={this.state.portfolioData.ipDetails}/>
 				</div>
 			);
 		}

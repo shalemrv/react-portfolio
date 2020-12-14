@@ -253,3 +253,33 @@
 .work-desc {
 	padding: 0 10px;
 }
+
+@media screen and (max-width: 768px) {
+	/*ABOUT*/
+	#about-card {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto;
+		grid-row-gap: 2rem;
+	}
+
+	#about-details {
+		overflow: unset !important;
+		height: auto !important;
+		margin: 0;
+		margin-right: 1rem;
+	}
+
+	#full--name {
+		font-size: 1.5rem;
+	}
+
+	#experience-container {
+		margin: 0;
+		margin-right: 1rem;
+	}
+
+	#serv-cards {
+		grid-template-columns: 1fr;
+		padding: 1rem;
+	}
+}
