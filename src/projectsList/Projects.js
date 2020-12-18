@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 
-import websitePng from "../assets/img/projects/website.png";
-import githubPng from "../assets/img/projects/github.png";
+import websitePng from "../assets/projects/website.png";
+import githubPng from "../assets/projects/github.png";
 
-import msAccessPng from "../assets/img/serv/msAccess.png";
-import angular1Png from "../assets/img/serv/angular1.png";
-import angular9Png from "../assets/img/serv/angular9.png";
-import expressPng from  "../assets/img/serv/expressjs.png";
-import htmlCssJsPng from  "../assets/img/serv/htmlCssJs.png";
-import mongodbPng from  "../assets/img/serv/mongodb.png";
-import mysqlPng from  "../assets/img/serv/mysql.png";
-import nodePng from  "../assets/img/serv/node.png";
-import phpPng from  "../assets/img/serv/php.png";
-import vbPng from  "../assets/img/serv/vb.png";
-import vstudPng from  "../assets/img/serv/vstud.png";
-import htmlPng from  "../assets/img/serv/html.png";
+import msAccessPng from "../assets/technologies/msAccess.png";
+import angular1Png from "../assets/technologies/angular1.png";
+import angular9Png from "../assets/technologies/angular9.png";
+import expressPng from  "../assets/technologies/expressjs.png";
+import htmlCssJsPng from  "../assets/technologies/htmlCssJs.png";
+import mongodbPng from  "../assets/technologies/mongodb.png";
+import mysqlPng from  "../assets/technologies/mysql.png";
+import nodePng from  "../assets/technologies/node.png";
+import phpPng from  "../assets/technologies/php.png";
+import vbPng from  "../assets/technologies/vb.png";
+import vstudPng from  "../assets/technologies/vstud.png";
+import htmlPng from  "../assets/technologies/html.png";
 
 
 import './Projects.css';

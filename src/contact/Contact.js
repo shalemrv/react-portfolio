@@ -3,13 +3,15 @@ import React, { Component } from 'react';
 import swal from 'sweetalert';
 import axios from 'axios';
 
-import GithubPng from '../assets/img/contact/github.png';
-import FbPng from '../assets/img/contact/fb.png';
-import InstaPng from '../assets/img/contact/insta.png';
-import LinkedInPng from '../assets/img/contact/linkedin.png';
-import PhonePng from '../assets/img/contact/phone.png';
-import EmailPng from '../assets/img/contact/email.png';
-import WhatsappPng from '../assets/img/contact/whatsapp.png';
+import GithubPng from '../assets/social/github.png';
+import FbPng from '../assets/social/fb.png';
+import InstaPng from '../assets/social/insta.png';
+import LinkedInPng from '../assets/social/linkedin.png';
+import TwitterPng from '../assets/social/twitter.png';
+
+import PhonePng from '../assets/contact/phone.png';
+import EmailPng from '../assets/contact/email.png';
+import WhatsappPng from '../assets/contact/whatsapp.png';
 
 import './Contact.css';
 
@@ -267,24 +269,27 @@ export class Contact extends Component {
 	render() {
 		return (
 			<section id={"contact"} className="cont-view view-grid">
-				<div className="flex-center">
+				<div className="text-align-center">
 					<div className="view-heading view-heading-contact">
 						CONTACT
 					</div>
 				</div>
 				<div id={"contact-body-container"}>
 					<div id={"social-links-container"}>
-						<a target="_blank" rel="noreferrer" href="https://github.com/shalemrv/">
-							<img src={GithubPng} alt="Github"/>
-						</a>
-						<a target="_blank" rel="noreferrer" href="https://www.facebook.com/kingshalemr">
-							<img src={FbPng} alt="Facebook"/>
-						</a>
-						<a target="_blank" rel="noreferrer" href="https://www.instagram.com/king_of_peace">
+						<a target="_blank" rel="noreferrer" href="https://www.instagram.com/we_shall_aim">
 							<img src={InstaPng} alt="Instagram"/>
 						</a>
+						<a target="_blank" rel="noreferrer" href="https://www.facebook.com/weShallAim">
+							<img src={FbPng} alt="Facebook"/>
+						</a>
+						<a target="_blank" rel="noreferrer" href="https://github.com/shalemrv/">
+							<img src={GithubPng} alt="Github"/>
+						</a>						
 						<a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/shalemrv">
 							<img src={LinkedInPng} alt="LinkedIn"/>
+						</a>
+						<a target="_blank" rel="noreferrer" href="https://twitter.com/weShallAim">
+							<img src={TwitterPng} alt="Twitter"/>
 						</a>
 					</div>
 					<div id={"contact-details-container"}>
@@ -403,14 +408,14 @@ export class Contact extends Component {
 								<div>
 									<br/><br/>
 									<div id={"ipDetailsContainer"}>
-										<span id={"ipDetailsLabel"}>IP Details</span>
+										<h2 id={"ipDetailsLabel"}>IP Details</h2>
 										<div id={"ipAddressContainer"}>
 											<span id={"ipAddressLabel"}>IP Address</span>
 											<h3>{this.state.ipDetails.ip}</h3>
 										</div>
 										<div id={"iplocationContainer"}>
 											<span id={"iplocationLabel"}>Location</span>
-											<h3>{this.state.ipDetails.ip}</h3>
+											<h3>{this.state.ipDetails.city}</h3>
 										</div>
 									</div>
 								</div>

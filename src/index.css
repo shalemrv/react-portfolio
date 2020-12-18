@@ -1,9 +1,20 @@
 @import url("https://fonts.googleapis.com/css?family=Livvic&display=swap");
-/*font-family: 'Livvic', sans-serif;*/
 @import url("https://fonts.googleapis.com/css?family=Dosis&display=swap");
-/*font-family: 'Dosis', sans-serif;*/
 @import url("https://fonts.googleapis.com/css2?family=Yellowtail&display=swap");
-/*font-family: 'Yellowtail', cursive;*/
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800&display=swap");
+
+.Livvic {
+	font-family: "Livvic", sans-serif;
+}
+.Dosis {
+	font-family: "Dosis", sans-serif;
+}
+.Yellowtail {
+	font-family: "Yellowtail", sans-serif;
+}
+.Orbitron {
+	font-family: "Orbitron", sans-serif;
+}
 
 * {
 	box-sizing: border-box;
@@ -17,7 +28,7 @@
 	-ms-user-select: none; /* IE 10+ */
 	user-select: none; /* Standard syntax */
 
-	scroll-behavior: smooth;
+	/* scroll-behavior: smooth; */
 }
 
 html {
@@ -26,7 +37,7 @@ html {
 }
 
 body {
-	background: url(./assets/img/body-bg.jpg);
+	background: url(./assets/body-background.jpg);
 	background-position: fixed;
 
 	overflow: hidden;

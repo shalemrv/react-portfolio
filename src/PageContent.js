@@ -3,18 +3,20 @@ import axios from 'axios';
 
 import Home from './home/Home';
 import About from './about/About';
-import Projects from './projects/Projects';
-import Services from './services/Services';
+import Projects from './projectsList/Projects';
+import Services from './servicesList/Services';
 import Contact from './contact/Contact';
 
-import {ReactComponent as Divider2Svg} from './assets/img/svg/dividers/2.svg';
-import {ReactComponent as Divider3Svg} from './assets/img/svg/dividers/3.svg';
-import {ReactComponent as Divider4Svg} from './assets/img/svg/dividers/4.svg';
+import {ReactComponent as Divider2Svg} from './assets/svg/dividers/2.svg';
+import {ReactComponent as Divider3Svg} from './assets/svg/dividers/3.svg';
+import {ReactComponent as Divider4Svg} from './assets/svg/dividers/4.svg';
 
 export class PageContent extends Component {
 	state = {  
 		portfolioData: {},
-		dataLoading : true
+		dataLoading : true,
+		loadingLabel : "Loading portfolio data...",
+		imagesLoaded : 0
 	};
 
 	constructor(props){
@@ -28,14 +30,14 @@ export class PageContent extends Component {
 			(res) => {
 				this.setState({ portfolioData : res.data});
 				window.setTimeout(()=>{
-					this.setState({ dataLoading : false});
-				}, 1500);
+					this.setState({ dataLoading : false });
+				}, 4000);
 			}
 		)
 		.catch(
 			(res) => {
 				window.setTimeout(()=>{
-					this.setState({ dataLoading : false});
+					this.setState({ dataLoading : false });
 				}, 1500);
 				window.setTimeout(this.getPortfolioData, 2000);
 			}
@@ -46,17 +48,37 @@ export class PageContent extends Component {
 		this.getPortfolioData();
 	}
 	render() {
+		
 		if(this.state.dataLoading){
 			return (
 				<div className="page-loader-container">
-					<div className="page-loader"></div>
+					<div className="wavy-spring">
+						<span className="circlesContainer">
+							<span className="circle"></span>
+							<span className="circle"></span>
+							<span className="circle"></span>
+							<span className="circle"></span>
+							<span className="circle"></span>
+							<span className="circle"></span>
+							<span className="circle"></span>
+							<span className="circle"></span>
+							<span className="circle"></span>
+							<span className="circle"></span>
+							<span className="circle"></span>
+							<span className="circle"></span>
+							<span className="circle"></span>
+							<span className="circle"></span>
+							<span className="circle"></span>
+						</span>
+					</div>
+					<h2 style={{ textAlign: 'center' }}>{this.state.loadingLabel}</h2>
 				</div>
 			);
 		}
 		else{
 			return (
 				<div className="page-content">
-					<Home />
+					<Home/>
 					<About skills={this.state.portfolioData.skills}/>
 					<div className="sectionDividerSvg" style={{background: '#3c0054'}}>
 						<Divider2Svg />

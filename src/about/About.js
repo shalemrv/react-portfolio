@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './About.css';
 
-import dartLogo from "../assets/img/experience/dart.png";
+import dartLogo from "../assets/experience/dart.png";
 
 class About extends Component{
 	

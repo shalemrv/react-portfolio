@@ -43,9 +43,13 @@
 	justify-content: space-around;
 	text-align: center;
 	margin: 2rem 0;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	background: linear-gradient(90deg, #008cff, #000000);
+	display: flex;
+	justify-content: space-around;
+	background: linear-gradient(90deg, #008cff, #ffffff, #008cff);
+	background: linear-gradient(90deg, #490074, #ffffff, #490074);
+	border-top: 3px solid black;
+	border-bottom: 3px solid black;
+	box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.9);
 }
 
 #social-links-container img {
@@ -192,6 +196,10 @@
 	left: 0.25rem;
 	bottom: 0.25rem;
 	transition: all 0.25s ease;
+}
+#ipDetailsContainer {
+	background: rgba(0, 0, 0, 0.25);
+	text-transform: uppercase;
 }
 
 @media screen and (max-width: 712px) {
