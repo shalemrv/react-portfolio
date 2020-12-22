@@ -79,10 +79,16 @@ export class PageContent extends Component {
 			return (
 				<div className="page-content">
 					<Home/>
-					<About skills={this.state.portfolioData.skills}/>
-					<div className="sectionDividerSvg" style={{background: '#3c0054'}}>
-						<Divider2Svg />
-					</div>
+					{
+						this.state.portfolioData.skills.advanced &&
+						<About skills={this.state.portfolioData.skills}/>
+					}
+					{
+						this.state.portfolioData.skills.advanced &&
+						<div className="sectionDividerSvg" style={{background: '#3c0054'}}>
+							<Divider2Svg />
+						</div>
+					}
 					{
 						this.state.portfolioData.projectsList &&
 						<Projects projectsList={this.state.portfolioData.projectsList}/>

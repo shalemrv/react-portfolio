@@ -107,23 +107,34 @@ export class Contact extends Component {
 	
 	submitMessage(event){
 		event.preventDefault();
+		var invalidForm = false;
+		var invalidFields = [];
+
 		if(!this.state.newMessage.company){
-			swal("Invalid Input");
+			invalidFields.push("Company name");
+			invalidForm = true;
 		}
 		
 		if(!this.state.newMessage.name){
-			swal("Invalid Input");
+			invalidFields.push("Your name");
+			invalidForm = true;
 		}
 		
 		if(!this.state.newMessage.email){
-			swal("Invalid Input");
+			invalidFields.push("Email Address");
+			invalidForm = true;
 		}
 		
 		if(!this.state.newMessage.body){
-			swal("Invalid Input");
+			invalidFields.push("Message");
+			invalidForm = true;
 		}
 
-		swal("Valid Form Details");
+		if(invalidForm){
+			let errorMessage = invalidFields.join(",\n");
+			swal("Please enter the following field(sha):", )
+		}
+		
 
 		axios.post(
 			`/api/messages.php?action=add`,
@@ -229,6 +240,7 @@ export class Contact extends Component {
 				}
 		});
 	}
+
 	handleWhatsappClick(){
 		var contactInfo = "+919060317334";
 		swal(
@@ -407,15 +419,20 @@ export class Contact extends Component {
 								!!this.state.ipDetails.exists &&
 								<div>
 									<br/><br/>
-									<div id={"ipDetailsContainer"}>
-										<h2 id={"ipDetailsLabel"}>IP Details</h2>
+									<div id={"ipDetailsContainer"} style={{background : `url(${this.state.ipDetails.flag})`, backgroundSize: "cover" }}>
+										<div id={"ipDetailsLabel"}>
+											<span className="Dosis">
+												IP Details
+											</span>
+										</div>
 										<div id={"ipAddressContainer"}>
 											<span id={"ipAddressLabel"}>IP Address</span>
-											<h3>{this.state.ipDetails.ip}</h3>
+											<h3 className="Orbitron">{this.state.ipDetails.ip}</h3>
 										</div>
 										<div id={"iplocationContainer"}>
-											<span id={"iplocationLabel"}>Location</span>
-											<h3>{this.state.ipDetails.city}</h3>
+											<div id={"iplocationLabel"}>Location</div>
+											<h3 className="Orbitron">{this.state.ipDetails.city}, {this.state.ipDetails.region}</h3>
+											<h3 className="Orbitron">{this.state.ipDetails.country}</h3>
 										</div>
 									</div>
 								</div>
