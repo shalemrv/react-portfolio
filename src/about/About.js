@@ -3,6 +3,11 @@ import './About.css';
 
 import dartLogo from "../assets/experience/dart.png";
 
+import { Player, Controls } from '@lottiefiles/react-lottie-player';
+
+import AboutAnimationJSON from '../assets/lottie/about-details-36185-animation-about-seo-dashboard.json';
+import ExperienceAnimationJSON from '../assets/lottie/experience-27432-developer.json';
+
 class About extends Component{
 	
 	state = {
@@ -13,7 +18,7 @@ class About extends Component{
 		return (
 			<section id={"about"}>
 				<div className="text-align-center">
-					<div className="view-heading">
+					<div className="view-heading about-view-heading">
 						ABOUT
 					</div>
 				</div>
@@ -83,16 +88,48 @@ class About extends Component{
 							<div id={"hobbies-div"}>
 								<div className="about-myself--label">Hobbies : </div>
 								<div id={"hobbies-list"}>
-									<span className="hobby">📸 Photography,</span>										
-									<span className="hobby">🚲 Riding,</span>										
-									<span className="hobby">🚂 Travelling,</span>										
-									<span className="hobby">🎮 Gaming,</span>										
+									<span className="hobby">📸 Photography,</span>
+									<span className="hobby">🚲 Riding,</span>
+									<span className="hobby">🚂 Travelling,</span>
+									<span className="hobby">🎮 Gaming,</span>
 									<span className="hobby">🌟 Astronomy</span>
 								</div>
 							</div>
 						</div>
 					</div>
-
+					<div id={"aboutSkillsAnimationContainer"}>
+						<div>
+							<Player
+								autoplay
+								loop
+								src={AboutAnimationJSON}
+								background="transparent"
+								autoplay={true}
+								speed="1"
+								loop={true}
+								style={{ width: '70%' }}
+							>
+							<Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
+							</Player>
+						</div>
+					</div>
+					
+					<div id={"experienceAnimationContainer"}>
+						<div>
+							<Player
+								autoplay
+								loop
+								src={ExperienceAnimationJSON}
+								background="transparent"
+								autoplay={true}
+								speed="1"
+								loop={true}
+								style={{ width: '70%' }}
+							>
+							<Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
+							</Player>
+						</div>
+					</div>
 					<div id={"experience-container"}>
 						<div id={"experience-header"}>
 							<div id={"exp-heading"} className="flex-center">

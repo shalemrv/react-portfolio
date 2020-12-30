@@ -1,6 +1,6 @@
 #about {
 	background: #3c0054;
-	padding-bottom: 2rem;
+	padding: 4rem 0 2rem 0;
 }
 
 #about-card {
@@ -8,17 +8,32 @@
 	margin: 1rem;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	grid-row-gap: 1rem;
 	width: 100%;
 	overflow-y: auto;
+}
+.about-view-heading {
+	margin-top: 3rem;
 }
 
 #about-details {
 	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 7.5%;
 }
 
 #about-details > div {
 	border-radius: 0 10px 10px 0;
 	margin: 15px 0px;
+}
+
+#aboutSkillsAnimationContainer,
+#experienceAnimationContainer {
+	/* display: flex;
+	justify-content: center;
+	align-items: center; */
 }
 
 #dev-img-div img {

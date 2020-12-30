@@ -24,6 +24,11 @@ export class PageContent extends Component {
 		this.getPortfolioData = this.getPortfolioData.bind(this);
 	}
 
+	hideLoadingDiv(){
+		const navUl = document.querySelector("#page-loader-container");
+		navUl.classList.add('fade-slide-up-exit');
+	}
+
 	getPortfolioData(){
 		axios.get(`http://127.0.0.1:11111/api/data.php`)
 		.then(
@@ -31,6 +36,7 @@ export class PageContent extends Component {
 				this.setState({ portfolioData : res.data});
 				window.setTimeout(()=>{
 					this.setState({ dataLoading : false });
+					this.hideLoadingDiv();
 				}, 4000);
 			}
 		)
@@ -39,7 +45,7 @@ export class PageContent extends Component {
 				window.setTimeout(()=>{
 					this.setState({ dataLoading : false });
 				}, 1500);
-				window.setTimeout(this.getPortfolioData, 2000);
+				// window.setTimeout(this.getPortfolioData, 2000);
 			}
 		);
 	}
@@ -48,10 +54,9 @@ export class PageContent extends Component {
 		this.getPortfolioData();
 	}
 	render() {
-		
-		if(this.state.dataLoading){
-			return (
-				<div className="page-loader-container">
+		return (
+			<div>
+				<div id={"page-loader-container"}>
 					<div className="wavy-spring">
 						<span className="circlesContainer">
 							<span className="circle"></span>
@@ -73,46 +78,46 @@ export class PageContent extends Component {
 					</div>
 					<h2 style={{ textAlign: 'center' }}>{this.state.loadingLabel}</h2>
 				</div>
-			);
-		}
-		else{
-			return (
-				<div className="page-content">
-					<Home/>
-					{
-						this.state.portfolioData.skills.advanced &&
-						<About skills={this.state.portfolioData.skills}/>
-					}
-					{
-						this.state.portfolioData.skills.advanced &&
-						<div className="sectionDividerSvg" style={{background: '#3c0054'}}>
-							<Divider2Svg />
-						</div>
-					}
-					{
-						this.state.portfolioData.projectsList &&
-						<Projects projectsList={this.state.portfolioData.projectsList}/>
-					}
-					{
-						this.state.portfolioData.projectsList &&
-						<div className="sectionDividerSvg" style={{background: '#3c0054'}}>
-							<Divider3Svg />
-						</div>
-					}
-					{
-						this.state.portfolioData.servicesList &&
-						<Services servicesList={this.state.portfolioData.servicesList}/>
-					}
-					{
-						this.state.portfolioData.servicesList &&
-						<div className="sectionDividerSvg" style={{background: '#3c0054'}}>
-							<Divider4Svg />
-						</div>
-					}
-					<Contact ipDetails={this.state.portfolioData.ipDetails}/>
-				</div>
-			);
-		}
+				{
+					!this.state.dataLoading &&
+					<div className="page-content">
+						<Home/>
+						{
+							this.state.portfolioData.skills.advanced &&
+							<About skills={this.state.portfolioData.skills}/>
+						}
+						{
+							this.state.portfolioData.skills.advanced &&
+							<div className="sectionDividerSvg" style={{background: '#3c0054'}}>
+								<Divider2Svg />
+							</div>
+						}
+						{
+							this.state.portfolioData.projectsList &&
+							<Projects projectsList={this.state.portfolioData.projectsList}/>
+						}
+						{
+							this.state.portfolioData.projectsList &&
+							<div className="sectionDividerSvg" style={{background: '#3c0054'}}>
+								<Divider3Svg />
+							</div>
+						}
+						{
+							this.state.portfolioData.servicesList &&
+							<Services servicesList={this.state.portfolioData.servicesList}/>
+						}
+						{
+							this.state.portfolioData.servicesList &&
+							<div className="sectionDividerSvg" style={{background: '#3c0054'}}>
+								<Divider4Svg />
+							</div>
+						}
+						<Contact ipDetails={this.state.portfolioData.ipDetails} visitDetails={this.state.portfolioData.visitDetails}/>
+					</div>
+				}
+			</div>
+		);
+		
 	}
 }
 

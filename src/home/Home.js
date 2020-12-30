@@ -51,7 +51,7 @@ export class Home extends Component {
 				
 
 				<div id={"overviewContainer"}>
-					<div id={"nameTitleSvgContainer"}>
+					<div id={"nameTitleSvgContainer"} className="slide-lToR">
 						<ProfileSvg />
 					</div>
 					<div id={"overviewElementsContainer"}>

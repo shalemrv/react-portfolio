@@ -103,7 +103,7 @@
 	}
 }
 
-.page-loader-container {
+#page-loader-container {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -128,8 +128,11 @@
 		rgba(0, 190, 228, 1) 51%,
 		rgba(230, 0, 255, 1) 100%
 	);
+
+	transition: 1s all ease-in-out;
+	opacity: 1;
 }
-.page-loader-container::before {
+#page-loader-container::before {
 	content: "";
 	position: absolute;
 	top: -50%;
@@ -163,7 +166,7 @@
 	animation: zoomIn 2s infinite ease-in-out;
 }
 
-.page-loader-container h2 {
+#page-loader-container h2 {
 	color: black;
 }
 

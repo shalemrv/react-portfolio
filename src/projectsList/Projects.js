@@ -97,9 +97,11 @@ export class Projects extends Component {
 							)
 						})
 					}
-					<br/>
-					<br/>
 				</div>
+				
+				<br/>
+				<br/>
+				<br/>
 			</section>
 		)
 	}

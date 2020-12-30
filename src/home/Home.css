@@ -4,45 +4,6 @@
 	overflow-y: hidden;
 }
 
-#customImageFadeContainer {
-	width: 100vw;
-	height: 100vh;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 100;
-}
-#customImageFadeContainer .slide img {
-	position: absolute;
-	width: 100vw;
-	height: 100vh;
-	object-fit: cover;
-	background: none;
-	z-index: -1;
-}
-
-#customImageFadeContainer .slide1 {
-	animation: fade1 70s infinite;
-}
-#customImageFadeContainer .slide2 {
-	animation: fade2 70s infinite;
-}
-#customImageFadeContainer .slide3 {
-	animation: fade3 70s infinite;
-}
-#customImageFadeContainer .slide4 {
-	animation: fade4 70s infinite;
-}
-#customImageFadeContainer .slide5 {
-	animation: fade5 70s infinite;
-}
-#customImageFadeContainer .slide6 {
-	animation: fade6 70s infinite;
-}
-#customImageFadeContainer .slide7 {
-	animation: fade7 70s infinite;
-}
-
 #overviewContainer {
 	display: grid;
 	width: 100vw;
@@ -54,9 +15,11 @@
 	padding: 0 60% 0 5%;
 	z-index: 1000;
 }
-.overview img {
-	width: 100%;
+
+#nameTitleSvgContainer svg {
+	/* transform: matrix(1.5, 0, 0, 1.5, 0, 0); */
 }
+
 #overviewContainer svg,
 #overviewElementsContainer svg {
 	width: 100%;

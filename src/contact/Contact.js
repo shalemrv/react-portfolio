@@ -13,6 +13,9 @@ import PhonePng from '../assets/contact/phone.png';
 import EmailPng from '../assets/contact/email.png';
 import WhatsappPng from '../assets/contact/whatsapp.png';
 
+import IpStackPng from '../assets/ipstack.png';
+
+
 import './Contact.css';
 
 export class Contact extends Component {
@@ -25,7 +28,8 @@ export class Contact extends Component {
 			email	: "",
 			body	: ""
 		},
-		ipDetails : this.props.ipDetails
+		ipDetails	: this.props.ipDetails,
+		visitDetails	: this.props.visitDetails
 	};
 
 	constructor(props){
@@ -132,7 +136,7 @@ export class Contact extends Component {
 
 		if(invalidForm){
 			let errorMessage = invalidFields.join(",\n");
-			swal("Please enter the following field(sha):", )
+			swal("Please enter the following fields(${errorMessage}):", )
 		}
 		
 
@@ -296,7 +300,7 @@ export class Contact extends Component {
 						</a>
 						<a target="_blank" rel="noreferrer" href="https://github.com/shalemrv/">
 							<img src={GithubPng} alt="Github"/>
-						</a>						
+						</a>
 						<a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/shalemrv">
 							<img src={LinkedInPng} alt="LinkedIn"/>
 						</a>
@@ -379,47 +383,50 @@ export class Contact extends Component {
 						</div>
 						
 						<div id={"contact-info-container"}>
-							<div
-								className="contact-info"
-								onClick={this.handlePhoneClick}
-								title="Copy To Clipboard"
-							>
-								<div className="contact-icon-container">
-									<img src={PhonePng} alt={`Phone`}/>
+							<div>
+								<div
+									className="contact-info"
+									onClick={this.handlePhoneClick}
+									title="Copy To Clipboard"
+								>
+									<div className="contact-icon-container">
+										<img src={PhonePng} alt={`Phone`}/>
+									</div>
+									<h3>
+										+91 9060 317 334
+									</h3>
 								</div>
-								<h3>
-									+91 9060 317 334
-								</h3>
-							</div>
-							<div
-								className="contact-info"
-								onClick={this.handleEmailClick}
-								title="Copy to Clipboard"
-							>
-								<div className="contact-icon-container">
-									<img src={EmailPng} alt={`Email`}/>
+								<div
+									className="contact-info"
+									onClick={this.handleEmailClick}
+									title="Copy to Clipboard"
+								>
+									<div className="contact-icon-container">
+										<img src={EmailPng} alt={`Email`}/>
+									</div>
+									<h3>
+										shalemrv@gmail.com
+									</h3>
 								</div>
-								<h3>
-									shalemrv@gmail.com
-								</h3>
-							</div>
-							<div
-								className="contact-info"
-								title="Copy To Clipboard"
-								onClick={this.handleWhatsappClick}
-							>
-								<div className="contact-icon-container">
-									<img src={WhatsappPng} alt={`Whatsapp`}/>
+								<div
+									className="contact-info"
+									title="Copy To Clipboard"
+									onClick={this.handleWhatsappClick}
+								>
+									<div className="contact-icon-container">
+										<img src={WhatsappPng} alt={`Whatsapp`}/>
+									</div>
+									<h3>
+										+91 9060 317 334
+									</h3>
 								</div>
-								<h3>
-									+91 9060 317 334
-								</h3>
 							</div>
+							
 							{
 								!!this.state.ipDetails.exists &&
 								<div>
 									<br/><br/>
-									<div id={"ipDetailsContainer"} style={{background : `url(${this.state.ipDetails.flag})`, backgroundSize: "cover" }}>
+									<div id={"ipDetailsContainer"}>
 										<div id={"ipDetailsLabel"}>
 											<span className="Dosis">
 												IP Details
@@ -431,15 +438,27 @@ export class Contact extends Component {
 										</div>
 										<div id={"iplocationContainer"}>
 											<div id={"iplocationLabel"}>Location</div>
-											<h3 className="Orbitron">{this.state.ipDetails.city}, {this.state.ipDetails.region}</h3>
-											<h3 className="Orbitron">{this.state.ipDetails.country}</h3>
+											<h3 className="Poppins">{this.state.ipDetails.city}, {this.state.ipDetails.region}</h3>
+											<h3 className="Orbitron">
+												<img src={this.state.ipDetails.flag} alt="flag" />
+												{this.state.ipDetails.country}
+											</h3>
 										</div>
+										<br/>
+										<a id={"ipstackA"} href="https://ipstack.com" target="_blank" title="API Source">
+											<img src={IpStackPng} alt="flag" style={{height: '2rem', borderRadius: '500px'}}/>
+										</a>
 									</div>
+									<h4>
+										{this.state.visitDetails.count}
+										<br/>
+										{this.state.visitDetails.address.fullAddress}
+										<span><h6>Page Visits</h6></span>
+									</h4>
 								</div>
 							}
 						</div>
 					</div>
-					<br/><br/><br/>
 				</div>
 			</section>
 		)

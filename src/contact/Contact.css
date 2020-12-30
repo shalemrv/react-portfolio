@@ -4,12 +4,12 @@
 
 #contact-details-container {
 	display: grid;
-	grid-template-columns: 5fr 3fr;
+	grid-template-columns: 4fr 6fr;
 	grid-template-areas: "contactForm contactInfo";
 }
 
 #contact-form-container {
-	margin: 0 20% 0 10%;
+	margin: 0 3rem;
 	grid-area: contactForm;
 }
 
@@ -34,8 +34,7 @@
 
 #contact-info-container {
 	display: flex;
-	flex-direction: column;
-	grid-area: contactInfo;
+	align-items: center;
 }
 
 #social-links-container {
@@ -150,13 +149,13 @@
 
 .cust-input-container input:focus + .custom-label .custom-placeholder,
 .cust-input-container input:valid + .custom-label .custom-placeholder {
-	transform: translateY(-2.5rem);
+	transform: translateX(-100%);
 	font-size: 0.75rem;
 }
 
 .cust-input-container textarea:focus + .custom-label .custom-placeholder,
 .cust-input-container textarea:valid + .custom-label .custom-placeholder {
-	transform: translateY(-4.5rem);
+	transform: translateX(-100%);
 	font-size: 0.75rem;
 }
 
@@ -205,21 +204,23 @@
 	grid-column-gap: 1rem;
 	padding: 1rem;
 
-	background: rgba(0, 0, 0, 0.25);
-	text-transform: uppercase;
+	background: rgba(255, 255, 255, 0.1);
 	margin: 1rem 2rem;
 	border-radius: 0.5rem;
 	position: relative;
 	padding-top: 1.5rem;
-
-	/* box-shadow: 0 0 5px rgba(250, 250, 250, 0.5), 0 0 25px rgba(0, 255, 0, 0.5); */
-	box-shadow: 0 0 5px rgba(250, 250, 250, 0.25),
-		0 0 10px rgba(250, 0, 250, 0.5);
 }
 
 #ipDetailsLabel {
 	position: absolute;
 	top: -0.75rem;
+	width: 100%;
+	text-align: center;
+}
+
+#ipstackA {
+	position: absolute;
+	bottom: -1rem;
 	width: 100%;
 	text-align: center;
 }
@@ -238,32 +239,43 @@
 #ipAddressContainer {
 	background-color: rgba(0, 140, 255, 0.75);
 	background-color: rgba(0, 0, 0, 0.5);
-	border-radius: 0.5rem 4rem 0.5rem 0.5rem;
+	border-radius: 4rem 4rem 0.5rem 0.5rem;
 	padding: 0.5rem 1rem;
 	margin: 1rem 0;
+	text-align: center;
 }
 #ipAddressLabel {
 	font-size: 0.75rem;
 	letter-spacing: 2px;
+	width: 100%;
 }
 #ipAddressContainer h3 {
 	margin-top: 0.5rem;
 	letter-spacing: 2px;
-	font-size: 2rem;
+	font-size: 1.75rem;
+	text-align: center;
 }
 
 #iplocationContainer {
 	background-color: rgba(0, 140, 255, 0.75);
 	background-color: rgba(0, 0, 0, 0.5);
-	border-radius: 4rem 0.5rem 0.5rem 0.5rem;
+	border-radius: 0.5rem 0.5rem 4rem 4rem;
 	padding: 0.5rem 1rem;
 }
 #iplocationLabel {
 	font-size: 0.75rem;
 	letter-spacing: 2px;
-	text-align: right;
+	text-align: center;
+}
+#iplocationContainer img {
+	height: 1rem;
+	object-fit: contain;
+	margin-right: 1rem;
+	border-radius: 0.25rem;
+	overflow: hidden;
 }
 #iplocationContainer h3 {
+	text-align: center;
 	margin-top: 0.5rem;
 	letter-spacing: 2px;
 	font-size: 1rem;

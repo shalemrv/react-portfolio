@@ -58,7 +58,7 @@ export class Services extends Component {
 											<div className="service-card-title">
 												<h2>
 													<div className="service-title-div">
-														<span className="service-title-span">{service.title}</span>
+														<span className="service-title-span Orbitron">{service.title}</span>
 													</div>
 												</h2>
 											</div>
