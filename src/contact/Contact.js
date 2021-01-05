@@ -136,7 +136,7 @@ export class Contact extends Component {
 
 		if(invalidForm){
 			let errorMessage = invalidFields.join(",\n");
-			swal("Please enter the following fields(${errorMessage}):", )
+			swal(`Please enter the following fields - (${errorMessage})`, )
 		}
 		
 
@@ -445,7 +445,7 @@ export class Contact extends Component {
 											</h3>
 										</div>
 										<br/>
-										<a id={"ipstackA"} href="https://ipstack.com" target="_blank" title="API Source">
+										<a id={"ipstackA"} href="https://ipstack.com" target="_blank" rel="noreferrer" title="API Source">
 											<img src={IpStackPng} alt="flag" style={{height: '2rem', borderRadius: '500px'}}/>
 										</a>
 									</div>

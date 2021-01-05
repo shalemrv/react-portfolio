@@ -100,12 +100,10 @@ class About extends Component{
 					<div id={"aboutSkillsAnimationContainer"}>
 						<div>
 							<Player
-								autoplay
-								loop
 								src={AboutAnimationJSON}
 								background="transparent"
 								autoplay={true}
-								speed="1"
+								speed={"1"}
 								loop={true}
 								style={{ width: '70%' }}
 							>
@@ -113,16 +111,20 @@ class About extends Component{
 							</Player>
 						</div>
 					</div>
-					
+				</div>
+				<div className="text-align-center">
+					<div className="view-heading about-view-heading">
+						EXPERIENCE
+					</div>
+				</div>
+				<div id={"about-card"}>
 					<div id={"experienceAnimationContainer"}>
 						<div>
 							<Player
-								autoplay
-								loop
 								src={ExperienceAnimationJSON}
 								background="transparent"
 								autoplay={true}
-								speed="1"
+								speed={"1"}
 								loop={true}
 								style={{ width: '70%' }}
 							>
@@ -131,19 +133,22 @@ class About extends Component{
 						</div>
 					</div>
 					<div id={"experience-container"}>
-						<div id={"experience-header"}>
+						<div id={"resume-download"} className="flex-center">
+							<a className="btn btn-info" href="src/experience/resume.pdf" download="Resume_ShalemRajV_202008_August.pdf"><b>Download Resume</b></a>
+						</div>
+						{/* <div id={"experience-header"}>
 							<div id={"exp-heading"} className="flex-center">
 								Experience
 							</div>
 							<div id={"resume-download"} className="flex-center">
 								<a className="btn btn-info" href="src/experience/resume.pdf" download="Resume_ShalemRajV_202008_August.pdf"><b>Download Resume</b></a>
 							</div>
-						</div>
+						</div> */}
 
 						<div className="exp-card">
-							<div className="duration">
-								<strong>August 2019 - Present</strong>
-							</div>
+							<div className="designation">
+								<strong style={{color: 'white'}}>PHP / AngularJS Developer</strong>
+							</div>							
 							<div className="company-info">
 								<div>
 									<img className="comp-logo" src={dartLogo} alt="Dart Consulting"/>
@@ -157,8 +162,9 @@ class About extends Component{
 									</div>
 								</div>
 							</div>
-							<div className="designation">
-								<strong style={{color: 'white'}}>PHP / AngularJS Developer</strong>
+							<div className="duration">
+								<strong>1 year 6 months</strong>
+								<strong>August 2019 - Present</strong>
 							</div>
 							<div className="responsibilities">
 								<div className="responsibility">

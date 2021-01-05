@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+
+// import { Player, Controls } from '@lottiefiles/react-lottie-player';
+
+// import ExperienceCardAnimationJSON from '../assets/lottie/experience-card-animation.json';
+
 import './Carousel.css';
 import './Home.css';
 
@@ -48,17 +53,15 @@ export class Home extends Component {
 					</div>
 				</div>
 			
-				
-
 				<div id={"overviewContainer"}>
-					<div id={"nameTitleSvgContainer"} className="slide-lToR">
+					<div id={"nameTitleSvgContainer"} className="slide-ltToRb">
 						<ProfileSvg />
 					</div>
 					<div id={"overviewElementsContainer"}>
-						<div className="overview">
+						<div className="overview slide-lToR">
 							<ExperienceSvg />
 						</div>
-						<div className="overview">
+						<div className="overview slide-rToL">
 							<ProjectsSvg />
 						</div>
 					</div>

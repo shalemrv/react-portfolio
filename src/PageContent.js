@@ -30,7 +30,7 @@ export class PageContent extends Component {
 	}
 
 	getPortfolioData(){
-		axios.get(`http://127.0.0.1:11111/api/data.php`)
+		axios.get(`/api/data.php`)
 		.then(
 			(res) => {
 				this.setState({ portfolioData : res.data});
@@ -45,7 +45,6 @@ export class PageContent extends Component {
 				window.setTimeout(()=>{
 					this.setState({ dataLoading : false });
 				}, 1500);
-				// window.setTimeout(this.getPortfolioData, 2000);
 			}
 		);
 	}
@@ -83,36 +82,39 @@ export class PageContent extends Component {
 					<div className="page-content">
 						<Home/>
 						{
-							this.state.portfolioData.skills.advanced &&
+							!!this.state.portfolioData.skills.advanced &&
 							<About skills={this.state.portfolioData.skills}/>
 						}
 						{
-							this.state.portfolioData.skills.advanced &&
+							!!this.state.portfolioData.skills.advanced &&
 							<div className="sectionDividerSvg" style={{background: '#3c0054'}}>
 								<Divider2Svg />
 							</div>
 						}
 						{
-							this.state.portfolioData.projectsList &&
+							!!this.state.portfolioData.projectsList &&
 							<Projects projectsList={this.state.portfolioData.projectsList}/>
 						}
 						{
-							this.state.portfolioData.projectsList &&
+							!!this.state.portfolioData.projectsList &&
 							<div className="sectionDividerSvg" style={{background: '#3c0054'}}>
 								<Divider3Svg />
 							</div>
 						}
 						{
-							this.state.portfolioData.servicesList &&
+							!!this.state.portfolioData.servicesList &&
 							<Services servicesList={this.state.portfolioData.servicesList}/>
 						}
 						{
-							this.state.portfolioData.servicesList &&
+							!!this.state.portfolioData.servicesList &&
 							<div className="sectionDividerSvg" style={{background: '#3c0054'}}>
 								<Divider4Svg />
 							</div>
 						}
-						<Contact ipDetails={this.state.portfolioData.ipDetails} visitDetails={this.state.portfolioData.visitDetails}/>
+						{
+							!!this.state.portfolioData.visitDetails &&
+							<Contact ipDetails={this.state.portfolioData.ipDetails} visitDetails={this.state.portfolioData.visitDetails}/>
+						}
 					</div>
 				}
 			</div>

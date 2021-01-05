@@ -246,8 +246,10 @@
 	font-size: 0.75rem;
 }
 .duration {
+	display: flex;
+	justify-content: space-between;
 	text-align: center;
-	padding: 3px 5px;
+	padding: 3px 1.5rem;
 	background-color: #3eff5e;
 	overflow: hidden;
 }
