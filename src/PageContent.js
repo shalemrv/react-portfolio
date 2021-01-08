@@ -30,7 +30,7 @@ export class PageContent extends Component {
 	}
 
 	getPortfolioData(){
-		axios.get(`/api/data.php`)
+		axios.get(`http://127.0.0.1:11111/api/data.php`)
 		.then(
 			(res) => {
 				this.setState({ portfolioData : res.data});
@@ -45,6 +45,7 @@ export class PageContent extends Component {
 				window.setTimeout(()=>{
 					this.setState({ dataLoading : false });
 				}, 1500);
+				// window.setTimeout(this.getPortfolioData, 2000);
 			}
 		);
 	}

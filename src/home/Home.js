@@ -6,6 +6,7 @@ import React, { Component } from 'react';
 
 import './Carousel.css';
 import './Home.css';
+import './svg-animate.css';
 
 import cImage1 from '../assets/carousel/1.jpg';
 import cImage2 from '../assets/carousel/2.jpg';

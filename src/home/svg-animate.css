@@ -1,0 +1,70 @@
+#nameTitleSvgContainer svg {
+	overflow: visible;
+	transform-style: preserve-3d;
+}
+#nameTitleSvgContainer svg > * {
+	transition: all 0.5s ease;
+	perspective-origin: 10% 50%;
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+}
+
+/*Default raise*/
+#nameTitleSvgContainer svg > *:nth-child(1) {
+	transform: perspective(300px) translateZ(-100px);
+}
+
+#nameTitleSvgContainer svg > *:nth-child(2) {
+	transform: perspective(300px) translateZ(0px);
+}
+
+#nameTitleSvgContainer svg > *:nth-child(3) {
+	transform: perspective(300px) translateZ(60px);
+}
+
+#nameTitleSvgContainer svg > *:nth-child(4) {
+	transform: perspective(300px) translateZ(80px);
+}
+
+#nameTitleSvgContainer svg > *:nth-child(5) {
+	transform: perspective(300px) translateZ(100px);
+}
+#nameTitleSvgContainer svg > *:nth-child(6) {
+	transform: perspective(300px) translateZ(120px);
+}
+#nameTitleSvgContainer svg > *:nth-child(7) {
+	transform: perspective(300px) translateZ(140px);
+}
+/*HOVER*/
+#nameTitleSvgContainer svg > *:nth-child(1) {
+	transform: perspective(300px) rotateX(50deg) rotateY(20deg) rotateZ(-50deg)
+		translate3d(0px, -80px, -200px);
+}
+
+#nameTitleSvgContainer svg > *:nth-child(2) {
+	transform: perspective(300px) rotateX(50deg) rotateY(20deg) rotateZ(-50deg)
+		translate3d(0, 97px, -109px);
+}
+
+#nameTitleSvgContainer svg > *:nth-child(3) {
+	transform: perspective(300px) rotateX(30deg) rotateY(20deg) rotateZ(-20deg)
+		translate3d(0, 0, 60px);
+}
+
+#nameTitleSvgContainer svg > *:nth-child(4) {
+	transform: perspective(300px) rotateX(30deg) rotateY(20deg) rotateZ(-20deg)
+		translate3d(0, 0, 80px);
+}
+
+#nameTitleSvgContainer svg > *:nth-child(5) {
+	transform: perspective(300px) rotateX(30deg) rotateY(20deg) rotateZ(-20deg)
+		translate3d(0, 0, 100px);
+}
+#nameTitleSvgContainer svg > *:nth-child(6) {
+	transform: perspective(300px) rotateX(30deg) rotateY(20deg) rotateZ(-20deg)
+		translate3d(-170px, 225px, 120px);
+}
+#nameTitleSvgContainer svg > *:nth-child(7) {
+	transform: perspective(300px) rotateX(30deg) rotateY(20deg) rotateZ(-20deg)
+		translate3d(0, 0, 140px);
+}

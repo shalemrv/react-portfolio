@@ -24,6 +24,23 @@
 #overviewElementsContainer svg {
 	width: 100%;
 }
+/* 
+#overviewContainer svg > *:nth-child(1) {
+	-webkit-animation: slide-lToR 0.5s 1s ease-in-out both;
+	animation: slide-lToR 0.5s 1s ease-in-out both;
+}
+#overviewContainer svg > *:nth-child(2) {
+	-webkit-animation: slide-lToR 0.5s 1.2s ease-in-out both;
+	animation: slide-lToR 0.5s 1.2s ease-in-out both;
+}
+#overviewContainer svg > *:nth-child(3) {
+	-webkit-animation: slide-lToR 0.5s 1.4s ease-in-out both;
+	animation: slide-lToR 0.5s 1.4s ease-in-out both;
+}
+#overviewContainer svg > *:nth-child(4) {
+	-webkit-animation: slide-lToR 0.5s 1.6s ease-in-out both;
+	animation: slide-lToR 0.5s 1.6s ease-in-out both;
+} */
 #overviewElementsContainer {
 	z-index: 1000;
 	display: flex;
