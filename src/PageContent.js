@@ -83,38 +83,38 @@ export class PageContent extends Component {
 					<div className="page-content">
 						<Home/>
 						{
-							!!this.state.portfolioData.skills.advanced &&
-							<About skills={this.state.portfolioData.skills}/>
+							!!this.state.portfolioData?.skills?.advanced &&
+							<About skills={this.state.portfolioData?.skills}/>
 						}
 						{
-							!!this.state.portfolioData.skills.advanced &&
+							!!this.state.portfolioData?.skills.advanced &&
 							<div className="sectionDividerSvg" style={{background: '#3c0054'}}>
 								<Divider2Svg />
 							</div>
 						}
 						{
-							!!this.state.portfolioData.projectsList &&
-							<Projects projectsList={this.state.portfolioData.projectsList}/>
+							!!this.state.portfolioData?.projectsList &&
+							<Projects projectsList={this.state.portfolioData?.projectsList}/>
 						}
 						{
-							!!this.state.portfolioData.projectsList &&
+							!!this.state.portfolioData?.projectsList &&
 							<div className="sectionDividerSvg" style={{background: '#3c0054'}}>
 								<Divider3Svg />
 							</div>
 						}
 						{
-							!!this.state.portfolioData.servicesList &&
-							<Services servicesList={this.state.portfolioData.servicesList}/>
+							!!this.state.portfolioData?.servicesList &&
+							<Services servicesList={this.state.portfolioData?.servicesList}/>
 						}
 						{
-							!!this.state.portfolioData.servicesList &&
+							!!this.state.portfolioData?.servicesList &&
 							<div className="sectionDividerSvg" style={{background: '#3c0054'}}>
 								<Divider4Svg />
 							</div>
 						}
 						{
-							!!this.state.portfolioData.visitDetails &&
-							<Contact ipDetails={this.state.portfolioData.ipDetails} visitDetails={this.state.portfolioData.visitDetails}/>
+							!!this.state.portfolioData?.visitDetails &&
+							<Contact ipDetails={this.state.portfolioData?.ipDetails} visitDetails={this.state.portfolioData?.visitDetails}/>
 						}
 					</div>
 				}
