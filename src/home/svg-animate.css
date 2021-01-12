@@ -1,70 +1,76 @@
 #nameTitleSvgContainer svg {
 	overflow: visible;
 	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
 }
 #nameTitleSvgContainer svg > * {
-	transition: all 0.5s ease;
 	perspective-origin: 10% 50%;
-	transform-style: preserve-3d;
-	-webkit-transform-style: preserve-3d;
+	/* transform-style: preserve-3d; */
 }
 
 /*Default raise*/
 #nameTitleSvgContainer svg > *:nth-child(1) {
-	transform: perspective(300px) translateZ(-100px);
+	transition: all 0.5s 0.1s ease;
+	transform: perspective(300px) translate3d(0, 0, -200px);
 }
 
 #nameTitleSvgContainer svg > *:nth-child(2) {
-	transform: perspective(300px) translateZ(0px);
+	transition: all 0.4s 0.15s ease-in-out;
+	transform: perspective(300px) translate3d(0, 0, -110px);
 }
 
 #nameTitleSvgContainer svg > *:nth-child(3) {
-	transform: perspective(300px) translateZ(60px);
+	transition: all 0.3s 0.2s ease-in-out;
+	transform: perspective(300px) translate3d(0, 0, 60px);
 }
 
 #nameTitleSvgContainer svg > *:nth-child(4) {
-	transform: perspective(300px) translateZ(80px);
+	transition: all 0.25s 0.25s ease-in-out;
+	transform: perspective(300px) translate3d(0, 0, 80px);
 }
 
 #nameTitleSvgContainer svg > *:nth-child(5) {
-	transform: perspective(300px) translateZ(100px);
+	transition: all 0.25s 0.3s ease-in-out;
+	transform: perspective(300px) translate3d(0, 0, 100px);
 }
 #nameTitleSvgContainer svg > *:nth-child(6) {
-	transform: perspective(300px) translateZ(120px);
+	transition: all 0.25s 0.35s ease-in-out;
+	transform: perspective(300px) translate3d(0, 0, 120px);
 }
 #nameTitleSvgContainer svg > *:nth-child(7) {
-	transform: perspective(300px) translateZ(140px);
+	transition: all 0.25s 0.4s ease-in-out;
+	transform: perspective(300px) translate3d(0, 0, 65px);
 }
 /*HOVER*/
-#nameTitleSvgContainer svg > *:nth-child(1) {
+#nameTitleSvgContainer svg:hover > *:nth-child(1) {
 	transform: perspective(300px) rotateX(50deg) rotateY(20deg) rotateZ(-50deg)
-		translate3d(0px, -80px, -200px);
+		translate3d(-70px, -30px, -200px);
 }
 
-#nameTitleSvgContainer svg > *:nth-child(2) {
+#nameTitleSvgContainer svg:hover > *:nth-child(2) {
 	transform: perspective(300px) rotateX(50deg) rotateY(20deg) rotateZ(-50deg)
-		translate3d(0, 97px, -109px);
+		translate3d(-80px, 10px, -110px);
 }
 
-#nameTitleSvgContainer svg > *:nth-child(3) {
-	transform: perspective(300px) rotateX(30deg) rotateY(20deg) rotateZ(-20deg)
-		translate3d(0, 0, 60px);
+#nameTitleSvgContainer svg:hover > *:nth-child(3) {
+	transform: perspective(300px) rotateX(50deg) rotateY(20deg) rotateZ(-40deg)
+		translate3d(-170px, 110px, 60px);
 }
 
-#nameTitleSvgContainer svg > *:nth-child(4) {
-	transform: perspective(300px) rotateX(30deg) rotateY(20deg) rotateZ(-20deg)
-		translate3d(0, 0, 80px);
+#nameTitleSvgContainer svg:hover > *:nth-child(4) {
+	transform: perspective(300px) rotateX(50deg) rotateY(20deg) rotateZ(-40deg)
+		translate3d(-210px, 125px, 80px);
 }
 
-#nameTitleSvgContainer svg > *:nth-child(5) {
-	transform: perspective(300px) rotateX(30deg) rotateY(20deg) rotateZ(-20deg)
-		translate3d(0, 0, 100px);
+#nameTitleSvgContainer svg:hover > *:nth-child(5) {
+	transform: perspective(300px) rotateX(50deg) rotateY(20deg) rotateZ(-40deg)
+		translate3d(-215px, 130px, 100px);
 }
-#nameTitleSvgContainer svg > *:nth-child(6) {
-	transform: perspective(300px) rotateX(30deg) rotateY(20deg) rotateZ(-20deg)
-		translate3d(-170px, 225px, 120px);
+#nameTitleSvgContainer svg:hover > *:nth-child(6) {
+	transform: perspective(300px) rotateX(50deg) rotateY(20deg) rotateZ(-40deg)
+		translate3d(-220px, 170px, 120px);
 }
-#nameTitleSvgContainer svg > *:nth-child(7) {
-	transform: perspective(300px) rotateX(30deg) rotateY(20deg) rotateZ(-20deg)
-		translate3d(0, 0, 140px);
+#nameTitleSvgContainer svg:hover > *:nth-child(7) {
+	transform: perspective(300px) rotateX(50deg) rotateY(20deg) rotateZ(-40deg)
+		translate3d(-170px, 110px, 65px);
 }
