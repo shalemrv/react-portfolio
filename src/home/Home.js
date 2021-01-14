@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-// import { Player, Controls } from '@lottiefiles/react-lottie-player';
+import { Player, Controls } from '@lottiefiles/react-lottie-player';
 
-// import ExperienceCardAnimationJSON from '../assets/lottie/experience-card-animation.json';
+import DeveloperAnimationJSON from '../assets/lottie/home-41504-developer-is-programming-using-notebook.json';
 
 import './Carousel.css';
 import './Home.css';
@@ -22,8 +22,28 @@ import {ReactComponent as ProfileSvg} from '../assets/svg/overview-profile.svg';
 import {ReactComponent as ExperienceSvg} from '../assets/svg/overview-experience.svg';
 import {ReactComponent as ProjectsSvg} from '../assets/svg/overview-projects.svg';
 
+import {ReactComponent as ProfileQuadSvg} from '../assets/svg/overview-profile/overview-profile-1-quad.svg';
+import {ReactComponent as ProfileImgBGSvg} from '../assets/svg/overview-profile/overview-profile-2-imgBG.svg';
+import {ReactComponent as ProfileTitleBGSvg} from '../assets/svg/overview-profile/overview-profile-3-titleBG.svg';
+import {ReactComponent as ProfileNameBGSvg} from '../assets/svg/overview-profile/overview-profile-4-nameBG.svg';
+import {ReactComponent as ProfileNameSvg} from '../assets/svg/overview-profile/overview-profile-5-name.svg';
+import {ReactComponent as ProfileTitleSvg} from '../assets/svg/overview-profile/overview-profile-6-title.svg';
+import {ReactComponent as ProfileImgSvg} from '../assets/svg/overview-profile/overview-profile-7-img.svg';
 
 export class Home extends Component {
+
+	switchNameTitleSvgAnimateClass(){
+		var svgChildren = document.querySelector("#nameTitleSvgContainer");
+		svgChildren.classList.toggle("hover");
+	}
+
+	componentDidMount(){
+		setInterval(
+			this.switchNameTitleSvgAnimateClass,
+			10000
+		);
+	}
+
 	render(){
 		return (
 			<section id={"home"} className="cont-view">
@@ -55,13 +75,30 @@ export class Home extends Component {
 				</div>
 			
 				<div id={"overviewContainer"}>
-					<div id={"nameTitleSvgContainer"} className="slide-ltToRb">
-						<ProfileSvg />
+					<div id={"nameTitleSvgContainer"}>
+						<ProfileQuadSvg />
+						<ProfileImgBGSvg />
+						<ProfileTitleBGSvg />
+						<ProfileNameBGSvg />
+						<ProfileNameSvg />
+						<ProfileTitleSvg />
+						<ProfileImgSvg />
 					</div>
+					<div></div>
 					<div id={"overviewElementsContainer"}>
 						<div className="overview slide-lToR">
 							<ExperienceSvg />
 						</div>
+						<Player
+							src={DeveloperAnimationJSON}
+							background="transparent"
+							autoplay={true}
+							speed={"1"}
+							loop={true}
+							style={{ width: '70%' }}
+						>
+						<Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
+						</Player>
 						<div className="overview slide-rToL">
 							<ProjectsSvg />
 						</div>

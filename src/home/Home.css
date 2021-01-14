@@ -6,41 +6,18 @@
 
 #overviewContainer {
 	display: grid;
+	grid-template-rows: 30vh 20vh 30vh;
 	width: 100vw;
 	max-height: calc(100vh - 5rem);
 	z-index: 10000;
-	overflow: hidden;
-}
-#nameTitleSvgContainer {
-	padding: 0 60% 0 5%;
-	z-index: 1000;
-}
-
-#nameTitleSvgContainer svg {
-	/* transform: matrix(1.5, 0, 0, 1.5, 0, 0); */
+	overflow: visible;
 }
 
 #overviewContainer svg,
 #overviewElementsContainer svg {
 	width: 100%;
 }
-/* 
-#overviewContainer svg > *:nth-child(1) {
-	-webkit-animation: slide-lToR 0.5s 1s ease-in-out both;
-	animation: slide-lToR 0.5s 1s ease-in-out both;
-}
-#overviewContainer svg > *:nth-child(2) {
-	-webkit-animation: slide-lToR 0.5s 1.2s ease-in-out both;
-	animation: slide-lToR 0.5s 1.2s ease-in-out both;
-}
-#overviewContainer svg > *:nth-child(3) {
-	-webkit-animation: slide-lToR 0.5s 1.4s ease-in-out both;
-	animation: slide-lToR 0.5s 1.4s ease-in-out both;
-}
-#overviewContainer svg > *:nth-child(4) {
-	-webkit-animation: slide-lToR 0.5s 1.6s ease-in-out both;
-	animation: slide-lToR 0.5s 1.6s ease-in-out both;
-} */
+
 #overviewElementsContainer {
 	z-index: 1000;
 	display: flex;

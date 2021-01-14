@@ -1,204 +1,61 @@
+#nameTitleSvgContainer {
+	/* background: rgba(255, 0, 0, 0.25); */
+	padding: 0 60% 0 5%;
+	z-index: 1000;
+	height: 100%;
+	overflow: visible;
+	position: relative;
+}
+
 #nameTitleSvgContainer svg {
-	transition: 0.25s all ease-in-out;
+	position: absolute;
+	top: 7vh;
+	left: 10vh;
+	width: auto;
+}
+
+#nameTitleSvgContainer svg {
+	height: 100%;
 	overflow: visible;
 	transform-style: preserve-3d;
 	-webkit-transform-style: preserve-3d;
-	perspective: 1000px;
-	perspective-origin: 0% 0%;
-	-webkit-perspective: 1000px;
-	-webkit-perspective-origin: 0% 0;
-	-moz-perspective: 1000px;
-	-moz-perspective-origin: 0% 0;
-}
-#nameTitleSvgContainer svg:hover {
-	transform: rotateZ(10deg);
-}
-#nameTitleSvgContainer svg > * {
-	transform-style: preserve-3d;
-	-webkit-transform-style: preserve-3d;
-	perspective: 1000px;
-	perspective-origin: 0% 0%;
-	-webkit-perspective: 1000px;
-	-webkit-perspective-origin: 0% 0;
-	-moz-perspective: 1000px;
-	-moz-perspective-origin: 0% 0;
+	transition: all 2.5s ease-in-out;
 }
 
-/*Default raise*/
-#nameTitleSvgContainer svg > *:nth-child(1) {
-	transform-style: preserve-3d;
-	-webkit-transform-style: preserve-3d;
-	perspective: 1000px;
-	perspective-origin: 0% 0%;
-	-webkit-perspective: 1000px;
-	-webkit-perspective-origin: 0% 0;
-	-moz-perspective: 1000px;
-	-moz-perspective-origin: 0% 0;
-	transition: all 0.5s 0.1s ease;
-	transform: translate3d(0, 0, -200px);
+/*3D Transform*/
+
+/* Quadrilateral */
+#nameTitleSvgContainer.hover svg:nth-child(1) {
+	transform: perspective(1000px) rotateX(80deg) rotateZ(-40deg)
+		translate3d(0, 0, -7rem);
 }
 
-#nameTitleSvgContainer svg > *:nth-child(2) {
-	transform-style: preserve-3d;
-	-webkit-transform-style: preserve-3d;
-	perspective: 1000px;
-	perspective-origin: 0% 0%;
-	-webkit-perspective: 1000px;
-	-webkit-perspective-origin: 0% 0;
-	-moz-perspective: 1000px;
-	-moz-perspective-origin: 0% 0;
-	transition: all 0.4s 0.15s ease-in-out;
-	transform: translate3d(0, 0, -110px);
+/* ImgBG Ellipse */
+#nameTitleSvgContainer.hover svg:nth-child(2) {
+	transform: perspective(1000px) rotateX(80deg) rotateZ(-40deg)
+		translate3d(0, 2rem, -4rem);
 }
 
-#nameTitleSvgContainer svg > *:nth-child(3) {
-	transform-style: preserve-3d;
-	-webkit-transform-style: preserve-3d;
-	perspective: 1000px;
-	perspective-origin: 0% 0%;
-	-webkit-perspective: 1000px;
-	-webkit-perspective-origin: 0% 0;
-	-moz-perspective: 1000px;
-	-moz-perspective-origin: 0% 0;
-	transition: all 0.3s 0.2s ease-in-out;
-	transform: translate3d(0, 0, 60px);
+/* ImgBG Ellipse */
+#nameTitleSvgContainer.hover svg:nth-child(3) {
+	transform: perspective(1000px) rotateX(50deg) rotateY(20deg) rotateZ(-40deg)
+		translate3d(0, 0, -1rem);
 }
 
-#nameTitleSvgContainer svg > *:nth-child(4) {
-	transform-style: preserve-3d;
-	-webkit-transform-style: preserve-3d;
-	perspective: 1000px;
-	perspective-origin: 0% 0%;
-	-webkit-perspective: 1000px;
-	-webkit-perspective-origin: 0% 0;
-	-moz-perspective: 1000px;
-	-moz-perspective-origin: 0% 0;
-	transition: all 0.25s 0.25s ease-in-out;
-	transform: translate3d(0, 0, 80px);
+#nameTitleSvgContainer.hover svg:nth-child(4) {
+	transform: perspective(1000px) rotateX(50deg) rotateY(20deg) rotateZ(-40deg)
+		translate3d(0, 0, 1rem);
 }
 
-#nameTitleSvgContainer svg > *:nth-child(5) {
-	transform-style: preserve-3d;
-	-webkit-transform-style: preserve-3d;
-	perspective: 1000px;
-	perspective-origin: 0% 0%;
-	-webkit-perspective: 1000px;
-	-webkit-perspective-origin: 0% 0;
-	-moz-perspective: 1000px;
-	-moz-perspective-origin: 0% 0;
-	transition: all 0.25s 0.3s ease-in-out;
-	transform: translate3d(0, 0, 100px);
+#nameTitleSvgContainer.hover svg:nth-child(5) {
+	transform: perspective(1000px) rotateX(50deg) rotateY(20deg) rotateZ(-40deg)
+		translate3d(0, 0, 3rem);
 }
-#nameTitleSvgContainer svg > *:nth-child(6) {
-	transform-style: preserve-3d;
-	-webkit-transform-style: preserve-3d;
-	perspective: 1000px;
-	perspective-origin: 0% 0%;
-	-webkit-perspective: 1000px;
-	-webkit-perspective-origin: 0% 0;
-	-moz-perspective: 1000px;
-	-moz-perspective-origin: 0% 0;
-	transition: all 0.25s 0.35s ease-in-out;
-	transform: translate3d(0, 0, 120px);
+#nameTitleSvgContainer.hover svg:nth-child(6) {
+	transform: perspective(1000px) rotateX(50deg) rotateY(20deg) rotateZ(-40deg)
+		translate3d(0, 0, 5rem);
 }
-#nameTitleSvgContainer svg > *:nth-child(7) {
-	transform-style: preserve-3d;
-	-webkit-transform-style: preserve-3d;
-	perspective: 1000px;
-	perspective-origin: 0% 0%;
-	-webkit-perspective: 1000px;
-	-webkit-perspective-origin: 0% 0;
-	-moz-perspective: 1000px;
-	-moz-perspective-origin: 0% 0;
-	transition: all 0.25s 0.4s ease-in-out;
-	transform: translate3d(0, 0, 65px);
-}
-/*HOVER*/
-#nameTitleSvgContainer svg:hover > *:nth-child(1) {
-	transform-style: preserve-3d;
-	-webkit-transform-style: preserve-3d;
-	perspective: 1000px;
-	perspective-origin: 0% 0%;
-	-webkit-perspective: 1000px;
-	-webkit-perspective-origin: 0% 0;
-	-moz-perspective: 1000px;
-	-moz-perspective-origin: 0% 0;
-	transform: rotateX(50deg) rotateY(20deg) rotateZ(-50deg)
-		translate3d(-70px, -30px, -200px);
-}
-
-#nameTitleSvgContainer svg:hover > *:nth-child(2) {
-	transform-style: preserve-3d;
-	-webkit-transform-style: preserve-3d;
-	perspective: 1000px;
-	perspective-origin: 0% 0%;
-	-webkit-perspective: 1000px;
-	-webkit-perspective-origin: 0% 0;
-	-moz-perspective: 1000px;
-	-moz-perspective-origin: 0% 0;
-	transform: rotateX(50deg) rotateY(20deg) rotateZ(-50deg)
-		translate3d(-80px, 10px, -110px);
-}
-
-#nameTitleSvgContainer svg:hover > *:nth-child(3) {
-	transform-style: preserve-3d;
-	-webkit-transform-style: preserve-3d;
-	perspective: 1000px;
-	perspective-origin: 0% 0%;
-	-webkit-perspective: 1000px;
-	-webkit-perspective-origin: 0% 0;
-	-moz-perspective: 1000px;
-	-moz-perspective-origin: 0% 0;
-	transform: rotateX(50deg) rotateY(20deg) rotateZ(-40deg)
-		translate3d(-170px, 110px, 60px);
-}
-
-#nameTitleSvgContainer svg:hover > *:nth-child(4) {
-	transform-style: preserve-3d;
-	-webkit-transform-style: preserve-3d;
-	perspective: 1000px;
-	perspective-origin: 0% 0%;
-	-webkit-perspective: 1000px;
-	-webkit-perspective-origin: 0% 0;
-	-moz-perspective: 1000px;
-	-moz-perspective-origin: 0% 0;
-	transform: rotateX(50deg) rotateY(20deg) rotateZ(-40deg)
-		translate3d(-210px, 125px, 80px);
-}
-
-#nameTitleSvgContainer svg:hover > *:nth-child(5) {
-	transform-style: preserve-3d;
-	-webkit-transform-style: preserve-3d;
-	perspective: 1000px;
-	perspective-origin: 0% 0%;
-	-webkit-perspective: 1000px;
-	-webkit-perspective-origin: 0% 0;
-	-moz-perspective: 1000px;
-	-moz-perspective-origin: 0% 0;
-	transform: rotateX(50deg) rotateY(20deg) rotateZ(-40deg)
-		translate3d(-215px, 130px, 100px);
-}
-#nameTitleSvgContainer svg:hover > *:nth-child(6) {
-	transform-style: preserve-3d;
-	-webkit-transform-style: preserve-3d;
-	perspective: 1000px;
-	perspective-origin: 0% 0%;
-	-webkit-perspective: 1000px;
-	-webkit-perspective-origin: 0% 0;
-	-moz-perspective: 1000px;
-	-moz-perspective-origin: 0% 0;
-	transform: rotateX(50deg) rotateY(20deg) rotateZ(-40deg)
-		translate3d(-220px, 170px, 120px);
-}
-#nameTitleSvgContainer svg:hover > *:nth-child(7) {
-	transform-style: preserve-3d;
-	-webkit-transform-style: preserve-3d;
-	perspective: 1000px;
-	perspective-origin: 0% 0%;
-	-webkit-perspective: 1000px;
-	-webkit-perspective-origin: 0% 0;
-	-moz-perspective: 1000px;
-	-moz-perspective-origin: 0% 0;
-	transform: rotateX(50deg) rotateY(20deg) rotateZ(-40deg)
-		translate3d(-170px, 110px, 65px);
+#nameTitleSvgContainer.hover svg:nth-child(7) {
+	transform: perspective(1000px) rotateX(50deg) rotateY(20deg) rotateZ(-40deg)
+		translate3d(0, 0, 7rem);
 }
