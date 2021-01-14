@@ -26,23 +26,38 @@ import {ReactComponent as ProfileQuadSvg} from '../assets/svg/overview-profile/o
 import {ReactComponent as ProfileImgBGSvg} from '../assets/svg/overview-profile/overview-profile-2-imgBG.svg';
 import {ReactComponent as ProfileTitleBGSvg} from '../assets/svg/overview-profile/overview-profile-3-titleBG.svg';
 import {ReactComponent as ProfileNameBGSvg} from '../assets/svg/overview-profile/overview-profile-4-nameBG.svg';
-import {ReactComponent as ProfileNameSvg} from '../assets/svg/overview-profile/overview-profile-5-name.svg';
-import {ReactComponent as ProfileTitleSvg} from '../assets/svg/overview-profile/overview-profile-6-title.svg';
+import {ReactComponent as ProfileTitleSvg} from '../assets/svg/overview-profile/overview-profile-5-title.svg';
+import {ReactComponent as ProfileNameSvg} from '../assets/svg/overview-profile/overview-profile-6-name.svg';
 import {ReactComponent as ProfileImgSvg} from '../assets/svg/overview-profile/overview-profile-7-img.svg';
 
 export class Home extends Component {
 
-	switchNameTitleSvgAnimateClass(){
-		var svgChildren = document.querySelector("#nameTitleSvgContainer");
-		svgChildren.classList.toggle("hover");
-	}
+	// constructor(props){
+	// 	super(props);
+	// 	this.switchNameTitleSvgAnimateClass = this.switchNameTitleSvgAnimateClass.bind(this);
+	// }
 
-	componentDidMount(){
-		setInterval(
-			this.switchNameTitleSvgAnimateClass,
-			10000
-		);
-	}
+	// switchNameTitleSvgAnimateClass(){
+	// 	let timeoutIn = 5000;
+	// 	var svgChildren = document.querySelector("#nameTitleSvgContainer");
+	// 	svgChildren.classList.toggle("hover");
+
+	// 	if(Array.from(svgChildren.classList).includes("hover")){
+	// 		timeoutIn = 2500;
+	// 	}
+
+	// 	setTimeout(
+	// 		this.switchNameTitleSvgAnimateClass,
+	// 		timeoutIn
+	// 	);
+	// }
+
+	// componentDidMount(){
+	// 	// setTimeout(
+	// 	// 	this.switchNameTitleSvgAnimateClass,
+	// 	// 	5000
+	// 	// );
+	// }
 
 	render(){
 		return (
@@ -75,13 +90,13 @@ export class Home extends Component {
 				</div>
 			
 				<div id={"overviewContainer"}>
-					<div id={"nameTitleSvgContainer"}>
+					<div id={"nameTitleSvgContainer"} title="100% custom CSS 3D animation written from scratch !!!">
 						<ProfileQuadSvg />
 						<ProfileImgBGSvg />
 						<ProfileTitleBGSvg />
 						<ProfileNameBGSvg />
-						<ProfileNameSvg />
 						<ProfileTitleSvg />
+						<ProfileNameSvg />
 						<ProfileImgSvg />
 					</div>
 					<div></div>
