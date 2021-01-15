@@ -6,6 +6,6 @@ Technologies I've worked on (personally and/or professionally).
 Contact Details with app links that can work on phones and/or laptops.
 Contact Form where you can leave a message expect a reply to your email in 48 hours.
 
-This project is built using ### `React.JS` and ### `PHP`
+This project is built using `React.JS` and `PHP`
 
-Live at [Portfolio shalemrv.com](https://www.shalemrv.com).
+Live at [Portfolio shalemrv.com](https://www.shalemrv.com)
