@@ -8,4 +8,4 @@ Contact Form where you can leave a message expect a reply to your email in 48 ho
 
 This project is built using `React.JS` and `PHP`
 
-Live at [Portfolio shalemrv.com](https://www.shalemrv.com)
+Live at [Portfolio - shalemrv.com](https://www.shalemrv.com)
