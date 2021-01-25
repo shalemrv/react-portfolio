@@ -6,7 +6,9 @@ import DeveloperAnimationJSON from '../assets/lottie/home-41504-developer-is-pro
 
 import './Carousel.css';
 import './Home.css';
-import './svg-animate.css';
+import './name-title-svg-animate.css';
+import './overview-animate.css';
+// import './name-title-svg-animate.css';
 
 import cImage1 from '../assets/carousel/1.jpg';
 import cImage2 from '../assets/carousel/2.jpg';
@@ -18,7 +20,6 @@ import cImage7 from '../assets/carousel/7.jpg';
 
 import {ReactComponent as Divider1Svg} from '../assets/svg/dividers/1.svg';
 
-import {ReactComponent as ProfileSvg} from '../assets/svg/overview-profile.svg';
 import {ReactComponent as ExperienceSvg} from '../assets/svg/overview-experience.svg';
 import {ReactComponent as ProjectsSvg} from '../assets/svg/overview-projects.svg';
 
@@ -31,33 +32,6 @@ import {ReactComponent as ProfileNameSvg} from '../assets/svg/overview-profile/o
 import {ReactComponent as ProfileImgSvg} from '../assets/svg/overview-profile/overview-profile-7-img.svg';
 
 export class Home extends Component {
-
-	// constructor(props){
-	// 	super(props);
-	// 	this.switchNameTitleSvgAnimateClass = this.switchNameTitleSvgAnimateClass.bind(this);
-	// }
-
-	// switchNameTitleSvgAnimateClass(){
-	// 	let timeoutIn = 5000;
-	// 	var svgChildren = document.querySelector("#nameTitleSvgContainer");
-	// 	svgChildren.classList.toggle("hover");
-
-	// 	if(Array.from(svgChildren.classList).includes("hover")){
-	// 		timeoutIn = 2500;
-	// 	}
-
-	// 	setTimeout(
-	// 		this.switchNameTitleSvgAnimateClass,
-	// 		timeoutIn
-	// 	);
-	// }
-
-	// componentDidMount(){
-	// 	// setTimeout(
-	// 	// 	this.switchNameTitleSvgAnimateClass,
-	// 	// 	5000
-	// 	// );
-	// }
 
 	render(){
 		return (
@@ -101,20 +75,10 @@ export class Home extends Component {
 					</div>
 					<div></div>
 					<div id={"overviewElementsContainer"}>
-						<div className="overview slide-lToR">
+						<div id={"expOverviewContainer"} className="overview slide-lToR">
 							<ExperienceSvg />
 						</div>
-						<Player
-							src={DeveloperAnimationJSON}
-							background="transparent"
-							autoplay={true}
-							speed={"1"}
-							loop={true}
-							style={{ width: '70%' }}
-						>
-						<Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
-						</Player>
-						<div className="overview slide-rToL">
+						<div id={"projOverviewContainer"} className="overview slide-rToL">
 							<ProjectsSvg />
 						</div>
 					</div>

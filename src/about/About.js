@@ -3,7 +3,7 @@ import './About.css';
 
 import dartLogo from "../assets/experience/dart.png";
 
-import { Player, Controls } from '@lottiefiles/react-lottie-player';
+import { Player } from '@lottiefiles/react-lottie-player';
 
 import AboutAnimationJSON from '../assets/lottie/about-details-36185-animation-about-seo-dashboard.json';
 import ExperienceAnimationJSON from '../assets/lottie/experience-27432-developer.json';
@@ -17,12 +17,14 @@ class About extends Component{
 	render(){
 		return (
 			<section id={"about"}>
-				<div className="text-align-center">
+				<div className="text-align-center" className="aboutTitleGC">
 					<div className="view-heading about-view-heading">
-						ABOUT
+						About
 					</div>
 				</div>
-				<div id={"about-card"}>
+
+
+				<div id={"about-card"} className="aboutDetailsGC">
 					<div id={"about-details"}>
 						<div id={"about-myself-1"}>
 							<div id={"skills-div"}>
@@ -97,58 +99,52 @@ class About extends Component{
 							</div>
 						</div>
 					</div>
-					<div id={"aboutSkillsAnimationContainer"}>
-						<div>
-							<Player
-								src={AboutAnimationJSON}
-								background="transparent"
-								autoplay={true}
-								speed={"1"}
-								loop={true}
-								style={{ width: '70%' }}
-							>
-							<Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
-							</Player>
-						</div>
+				</div>
+				<div id={"aboutSkillsAnimationContainer"} className="aboutAnimationGC">
+					<div>
+						<Player
+							src={AboutAnimationJSON}
+							background="transparent"
+							autoplay={true}
+							speed={"1"}
+							loop={true}
+							style={{ width: '70%' }}
+						>
+						</Player>
 					</div>
 				</div>
-				<div className="text-align-center">
-					<div className="view-heading about-view-heading">
-						EXPERIENCE
-					</div>
-				</div>
-				<div id={"about-card"}>
-					<div id={"experienceAnimationContainer"}>
-						<div>
-							<Player
-								src={ExperienceAnimationJSON}
-								background="transparent"
-								autoplay={true}
-								speed={"1"}
-								loop={true}
-								style={{ width: '70%' }}
-							>
-							<Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
-							</Player>
-						</div>
-					</div>
-					<div id={"experience-container"}>
-						<div id={"resume-download"} className="flex-center">
-							<a className="btn btn-info" href="src/experience/resume.pdf" download="Resume_ShalemRajV_202008_August.pdf"><b>Download Resume</b></a>
-						</div>
-						{/* <div id={"experience-header"}>
-							<div id={"exp-heading"} className="flex-center">
-								Experience
-							</div>
-							<div id={"resume-download"} className="flex-center">
-								<a className="btn btn-info" href="src/experience/resume.pdf" download="Resume_ShalemRajV_202008_August.pdf"><b>Download Resume</b></a>
-							</div>
-						</div> */}
 
+				<div className="text-align-center" className="expTitleGC">
+					<div className="view-heading about-view-heading">
+						Experience
+					</div>
+					<div id={"resume-download"} className="flex-center">
+						<span className="myBTNContainer">
+							<a className="myBTN" href="src/experience/resume.pdf" download="Resume_ShalemRajV_202008_August.pdf">
+							</a>
+							<b>Download Resume</b>
+						</span>
+					</div>
+				</div>
+				<div id={"experienceAnimationContainer"} className="expAnimationGC">
+					<div>
+						<Player
+							src={ExperienceAnimationJSON}
+							background="transparent"
+							autoplay={true}
+							speed={"1"}
+							loop={true}
+							style={{ width: '70%' }}
+						>
+						</Player>
+					</div>
+				</div>
+				<div id={"about-card"} className="expDetailsGC">
+					<div id={"experience-container"}>
 						<div className="exp-card">
 							<div className="designation">
 								<strong style={{color: 'white'}}>PHP / AngularJS Developer</strong>
-							</div>							
+							</div>
 							<div className="company-info">
 								<div>
 									<img className="comp-logo" src={dartLogo} alt="Dart Consulting"/>

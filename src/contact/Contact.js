@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 
 import swal from 'sweetalert';
-import axios from 'axios';
+import axios from '../auth';
+
+import { Player } from '@lottiefiles/react-lottie-player';
+
+
+// import ContactAnimationJSON from '../assets/lottie/contact-all-27620-contact-us.json';
+import ContactAnimationJSON from '../assets/lottie/contact-mail-37147-contact-us.json';
+// import ContactAnimationJSON from '../assets/lottie/contact-phone-mail-41675-phone-and-email-communication-animation.json';
 
 import GithubPng from '../assets/social/github.png';
 import FbPng from '../assets/social/fb.png';
@@ -287,7 +294,7 @@ export class Contact extends Component {
 			<section id={"contact"} className="cont-view view-grid">
 				<div className="text-align-center">
 					<div className="view-heading view-heading-contact">
-						CONTACT
+						Contact
 					</div>
 				</div>
 				<div id={"contact-body-container"}>
@@ -309,80 +316,98 @@ export class Contact extends Component {
 						</a>
 					</div>
 					<div id={"contact-details-container"}>
-						<div id={"contact-form-container"}>
-							<form onSubmit={this.submitMessage}>
-								<h4 className="title">
-									Drop a message.
-								</h4>
-								<div className="cust-input-container">
-									<input
-										type="text"
-										value={this.state.newMessage.company}
-										onChange={this.updateCompany}
-										title="Company Name to be at least 5 characters long."
-										autoComplete="off"
-										required
-									/>
-									<label className="custom-label">
-										<span className="custom-placeholder">
-											Company Name
-										</span>
-									</label>
-								</div>
-								<div className="cust-input-container">
-									<input
-										type="text"
-										value={this.state.newMessage.name}
-										onChange={this.updateName}
-										title="Name cannot contain numbers or special characters"
-										autoComplete="off"
-										required
-									/>
-									<label className="custom-label">
-										<span className="custom-placeholder">
-											Contact Person (your name)
-										</span>
-									</label>
-								</div>
+						<div>
+							<div id={"contact-form-container"}>
+								<form onSubmit={this.submitMessage}>
+									<h4 className="title">
+										Drop a message.
+									</h4>
+									<div className="cust-input-container">
+										<input
+											type="text"
+											value={this.state.newMessage.company}
+											onChange={this.updateCompany}
+											title="Company Name to be at least 5 characters long."
+											placeholder="Company Name"
+											autoComplete="off"
+											required
+										/>
+										<label className="custom-label">
+											<span className="custom-placeholder">
+												Company Name
+											</span>
+										</label>
+									</div>
+									<div className="cust-input-container">
+										<input
+											type="text"
+											value={this.state.newMessage.name}
+											onChange={this.updateName}
+											placeholder="Contact Person (your name)"
+											title="Name cannot contain numbers or special characters"
+											autoComplete="off"
+											required
+										/>
+										<label className="custom-label">
+											<span className="custom-placeholder">
+												Contact Person (your name)
+											</span>
+										</label>
+									</div>
 
-								<div className="cust-input-container">
-									<input
-										type="email"
-										value={this.state.newMessage.email}
-										onChange={this.updateEmail}
-										autoComplete="off"
-										required
-									/>
-									<label className="custom-label">
-										<span className="custom-placeholder">
-											Email
-										</span>
-									</label>
-								</div>
+									<div className="cust-input-container">
+										<input
+											type="email"
+											value={this.state.newMessage.email}
+											onChange={this.updateEmail}
+											placeholder="Email"
+											autoComplete="off"
+											required
+										/>
+										<label className="custom-label">
+											<span className="custom-placeholder">
+												Email
+											</span>
+										</label>
+									</div>
 
-								<div className="cust-input-container">
-									<textarea
-										value={this.state.newMessage.body}
-										onChange={this.updateBody}
-										autoComplete="off"
-										required
-									></textarea>
-									<label className="custom-label">
-										<span className="custom-placeholder">
-											Your Message
-										</span>
-									</label>
-								</div>
+									<div className="cust-input-container">
+										<textarea
+											value={this.state.newMessage.body}
+											onChange={this.updateBody}
+											placeholder="Your Message"
+											autoComplete="off"
+											required
+										></textarea>
+										<label className="custom-label">
+											<span className="custom-placeholder">
+												Your Message
+											</span>
+										</label>
+									</div>
 
-								<div style={{textAlign: 'center'}}>
-									<button type="submit" className="btn btn-info">
-										Submit
-									</button>
-								</div>
-							</form>
+									<div style={{textAlign: 'center'}}>
+										<button type="submit" className="btn btn-info">
+											Submit
+										</button>
+									</div>
+								</form>
+							</div>
 						</div>
 						
-						<div id={"contact-info-container"}>
+						<Player
+							src={ContactAnimationJSON}
+							background="transparent"
+							autoplay={true}
+							speed={"1"}
+							loop={true}
+							style={{ width: '90%' }}
+						>
+						</Player>
+					</div>
+				</div>
+				
+				<div id={"contact-info-container"}>
 							<div>
 								<div
 									className="contact-info"
@@ -458,8 +483,7 @@ export class Contact extends Component {
 								</div>
 							}
 						</div>
-					</div>
-				</div>
+					
 			</section>
 		)
 	}

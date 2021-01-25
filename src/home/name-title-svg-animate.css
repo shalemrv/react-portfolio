@@ -1,5 +1,4 @@
 #nameTitleSvgContainer {
-	/* background: rgba(255, 0, 0, 0.25); */
 	padding: 0 60% 0 5%;
 	z-index: 1000;
 	height: 100%;
@@ -20,59 +19,60 @@
 	transform: perspective(1000px);
 }
 
+@media (max-width: 700px) {
+	#nameTitleSvgContainer svg {
+		left: 5%;
+		width: 90%;
+		overflow: visible;
+		transform-style: preserve-3d;
+		-webkit-transform-style: preserve-3d;
+		transition: all 1.5s ease-in-out;
+		transform: perspective(1000px);
+	}
+	#nameTitleSvgContainer.hover svg {
+		left: -3rem;
+	}
+}
+
 /*3D Transform*/
 
 /* Quadrilateral */
 #nameTitleSvgContainer svg:nth-child(1) {
-	/* transform: perspective(1000px) rotateX(80deg) rotateZ(-40deg)
-	translate3d(0, 0, -7rem); */
 	-webkit-animation: quadAnim 10s ease-in-out infinite;
 	animation: quadAnim 10s ease-in-out infinite;
 }
 
 /* ImgBG Ellipse */
 #nameTitleSvgContainer svg:nth-child(2) {
-	/* transform: perspective(1000px) rotateX(80deg) rotateZ(-40deg) translate3d(0, 2rem, -4rem); */
-	-webkit-animation: imgBgAnim 10s ease-in-out infinite;
 	animation: imgBgAnim 10s ease-in-out infinite;
 }
 
 /* TitleBG */
 #nameTitleSvgContainer svg:nth-child(3) {
-	/* transform: perspective(1000px) rotateX(80deg) rotateZ(-40deg)
-		translate3d(4rem, 0, -4rem); */
 	-webkit-animation: titleBgAnim 10s ease-in-out infinite;
 	animation: titleBgAnim 10s ease-in-out infinite;
 }
 
 /*NameBG Ellipse*/
 #nameTitleSvgContainer svg:nth-child(4) {
-	/* transform: perspective(1000px) rotateX(80deg) rotateZ(-40deg)
-		translate3d(7rem, 2rem, -2rem); */
 	-webkit-animation: nameBgAnim 10s ease-in-out infinite;
 	animation: nameBgAnim 10s ease-in-out infinite;
 }
 
 /* Title Text */
 #nameTitleSvgContainer svg:nth-child(5) {
-	/* transform: perspective(1000px) rotateX(50deg) rotateZ(-17deg)
-		translate3d(0rem, 2.75rem, 4rem) scale(0.75); */
 	-webkit-animation: titleTextAnim 10s ease-in-out infinite;
 	animation: titleTextAnim 10s ease-in-out infinite;
 }
 
 /* Name Text */
 #nameTitleSvgContainer svg:nth-child(6) {
-	/* transform: perspective(1000px) rotateX(50deg) rotateZ(-18deg)
-		translate3d(-2rem, 1.75rem, 3.5rem) scale(0.75); */
 	-webkit-animation: nameTextAnim 10s ease-in-out infinite;
 	animation: nameTextAnim 10s ease-in-out infinite;
 }
 
 /* Image Circular */
 #nameTitleSvgContainer svg:nth-child(7) {
-	/* transform: perspective(1500px) rotateX(70deg) rotateZ(-40deg)
-		translate3d(2rem, -1rem, -1rem); */
 	-webkit-animation: imgAnim 10s ease-in-out infinite;
 	animation: imgAnim 10s ease-in-out infinite;
 }

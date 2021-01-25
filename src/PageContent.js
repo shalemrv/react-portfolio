@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
+import axios from './auth';
 
 import Home from './home/Home';
 import About from './about/About';
@@ -26,7 +27,7 @@ export class PageContent extends Component {
 
 	hideLoadingDiv(){
 		const navUl = document.querySelector("#page-loader-container");
-		navUl.classList.add('fade-slide-up-exit');
+		navUl.classList.add('hide-loader');
 	}
 
 	getPortfolioData(){
@@ -87,7 +88,7 @@ export class PageContent extends Component {
 							<About skills={this.state.portfolioData?.skills}/>
 						}
 						{
-							!!this.state.portfolioData?.skills.advanced &&
+							!!this.state.portfolioData?.skills?.advanced &&
 							<div className="sectionDividerSvg" style={{background: '#3c0054'}}>
 								<Divider2Svg />
 							</div>

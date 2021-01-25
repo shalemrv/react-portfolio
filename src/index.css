@@ -4,6 +4,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Saira:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 
 .Livvic {
 	font-family: "Livvic", sans-serif;
@@ -22,6 +24,12 @@
 }
 .Saira {
 	font-family: "Saira", sans-serif;
+}
+.Montserrat {
+	font-family: "Montserrat", sans-serif;
+}
+.Nunito {
+	font-family: "Nunito", sans-serif;
 }
 
 * {
@@ -82,8 +90,9 @@ ul {
 	color: white;
 	text-orientation: upright;
 	margin: 0 2.5rem;
-	text-shadow: 20px -20px 4px rgba(180, 180, 180, 0.5);
-	font-weight: bolder;
+	text-shadow: -20px -20px 6px rgba(255, 255, 255, 0.25);
+	/* font-weight: bolder; */
+	font-family: "Montserrat", sans-serif;
 }
 
 section {
@@ -163,97 +172,167 @@ section {
 		transition: none;
 	}
 }
-
-.btn:hover {
-	color: #212529;
-	text-decoration: none;
+.myBTNContainer {
+	position: relative;
 }
+.myBTN {
+	position: relative;
 
-.btn:focus,
-.btn.focus {
-	outline: 0;
-	box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
+	display: inline-block;
 
-.btn.disabled,
-.btn:disabled {
-	opacity: 0.65;
-}
+	border-radius: 500px;
 
-.btn-info {
-	color: #fff;
-	background-color: #17a2b8;
-	border-color: #17a2b8;
+	height: 2rem;
+	width: 25rem;
+	/* background-color: red; */
+	padding: 0.1rem 1.5rem;
+
+	overflow: hidden;
 }
 
-.btn-info:hover {
-	color: #fff;
-	background-color: #138496;
-	border-color: #117a8b;
+.myBTN::after {
+	content: "";
+
+	position: absolute;
+	top: -100px;
+	left: -50px;
+
+	width: 800px;
+	height: 200px;
+
+	/* opacity: 0.75; */
+
+	/* background: rgb(70, 255, 80);
+	background: linear-gradient(
+		90deg,
+		rgba(70, 255, 80, 1) 0%,
+		rgba(107, 229, 239, 1) 50%,
+		rgba(230, 0, 255, 1) 100%
+	); */
+
+	background: rgb(0, 0, 0);
+	background: linear-gradient(
+		90deg,
+		rgba(0, 0, 0, 1) 0%,
+		rgba(0, 0, 0, 1) 18%,
+		rgba(9, 9, 121, 1) 46%,
+		rgba(0, 212, 255, 1) 75%,
+		rgb(125, 0, 163) 100%
+	);
+
+	/* background: #5614b0;
+	background: -webkit-linear-gradient(
+		to right,
+		#dbd65c,
+		#5614b0
+	); 
+	background: linear-gradient(
+		to right,
+		#dbd65c,
+		#5614b0
+	);  */
+
+	animation: btnMove 2.5s infinite ease-in-out;
+	z-index: 1;
 }
 
-.btn-info:focus,
-.btn-info.focus {
-	box-shadow: 0 0 0 0.2rem rgba(58, 176, 195, 0.5);
+.myBTNContainer b {
+	position: absolute;
+	top: -0.25rem;
+	left: 0;
+
+	width: 25rem;
+	padding: 0 2.5rem;
+	text-align: center;
+
+	pointer-events: none;
+
+	display: block;
+	font-family: "Montserrat", sans-serif !important;
+	text-transform: uppercase;
+	word-spacing: 0.75rem;
+	color: black;
+
+	z-index: 5000;
+
+	color: white;
+	text-shadow: -3px -3px 5px black;
+	-webkit-text-stroke: 0.5px black;
+
+	/* animation: textBW 5s infinite ease-in-out; */
 }
 
-.btn-info.disabled,
-.btn-info:disabled {
-	color: #fff;
-	background-color: #17a2b8;
-	border-color: #17a2b8;
+/* Button BG */
+@-webkit-keyframes btnMove {
+	0%,
+	100% {
+		-webkit-transform: translateX(-50%);
+		transform: translateX(-50%);
+		color: black;
+	}
+	50% {
+		-webkit-transform: translateX(50%);
+		transform: translateX(0%);
+		color: white;
+	}
+}
+@keyframes btnMove {
+	0%,
+	100% {
+		-webkit-transform: translateX(-50%);
+		transform: translateX(-50%);
+		color: black;
+	}
+	50% {
+		-webkit-transform: translateX(50%);
+		transform: translateX(0%);
+		color: white;
+	}
 }
 
-.btn-info:not(:disabled):not(.disabled):active,
-.btn-info:not(:disabled):not(.disabled).active,
-.show > .btn-info.dropdown-toggle {
-	color: #fff;
-	background-color: #117a8b;
-	border-color: #10707f;
+/* Border Radius BG */
+@-webkit-keyframes bordRadiusAlternate {
+	0%,
+	100% {
+		-webkit-transform: translateX(-50%);
+		transform: translateX(-50%);
+		color: black;
+	}
+	50% {
+		-webkit-transform: translateX(50%);
+		transform: translateX(0%);
+		color: white;
+	}
+}
+@keyframes bordRadiusAlternate {
+	0% {
+		border-radius: 500px 500px 500px 500px;
+	}
+	0% {
+		border-radius: 500px 500px 500px 500px;
+	}
+	0% {
+		border-radius: 500px 500px 500px 500px;
+	}
+	0% {
+		border-radius: 500px 500px 500px 500px;
+	}
 }
 
-.btn-info:not(:disabled):not(.disabled):active:focus,
-.btn-info:not(:disabled):not(.disabled).active:focus,
-.show > .btn-info.dropdown-toggle:focus {
-	box-shadow: 0 0 0 0.2rem rgba(58, 176, 195, 0.5);
-}
-
-.btn-info {
-	color: #fff;
-	background-color: #9933cc;
-	border-color: #9933cc;
-}
-.btn-info:hover {
-	color: #fff;
-	background-color: #822bad;
-	border-color: #7a29a3;
-}
-.btn-info:focus,
-.btn-info.focus {
-	color: #fff;
-	background-color: #822bad;
-	border-color: #7a29a3;
-	-webkit-box-shadow: 0 0 0 0.2rem rgba(168, 82, 212, 0.5);
-	box-shadow: 0 0 0 0.2rem rgba(168, 82, 212, 0.5);
-}
-.btn-info.disabled,
-.btn-info:disabled {
-	color: #fff;
-	background-color: #9933cc;
-	border-color: #9933cc;
-}
-.btn-info:not(:disabled):not(.disabled):active,
-.btn-info:not(:disabled):not(.disabled).active,
-.show > .btn-info.dropdown-toggle {
-	color: #fff;
-	background-color: #7a29a3;
-	border-color: #732699;
-}
-.btn-info:not(:disabled):not(.disabled):active:focus,
-.btn-info:not(:disabled):not(.disabled).active:focus,
-.show > .btn-info.dropdown-toggle:focus {
-	-webkit-box-shadow: 0 0 0 0.2rem rgba(168, 82, 212, 0.5);
-	box-shadow: 0 0 0 0.2rem rgba(168, 82, 212, 0.5);
+@keyframes textBW {
+	0%,
+	30%,
+	70%,
+	100% {
+		color: black;
+		text-shadow: -3px -3px 5px black;
+		-webkit-text-stroke: 0.5px white;
+	}
+	50% {
+		color: white;
+		text-shadow: -3px -3px 5px black;
+		-webkit-text-stroke: 0.5px black;
+	}
 }
 
 /**
@@ -491,4 +570,123 @@ section {
 		transform: translateY(-1000%) translateX(1000%);
 		visibility: hidden;
 	}
+}
+
+/*Bootstrap button*/
+.btn {
+	display: inline-block;
+	font-weight: 400;
+	color: #212529;
+	text-align: center;
+	vertical-align: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-color: transparent;
+	border: 1px solid transparent;
+	padding: 0.375rem 0.75rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	border-radius: 0.25rem;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+		border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.btn {
+		transition: none;
+	}
+}
+
+.btn:hover {
+	color: #212529;
+	text-decoration: none;
+}
+
+.btn:focus,
+.btn.focus {
+	outline: 0;
+	box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.btn.disabled,
+.btn:disabled {
+	opacity: 0.65;
+}
+
+.btn-info {
+	color: #fff;
+	background-color: #17a2b8;
+	border-color: #17a2b8;
+}
+
+.btn-info:hover {
+	color: #fff;
+	background-color: #138496;
+	border-color: #117a8b;
+}
+
+.btn-info:focus,
+.btn-info.focus {
+	box-shadow: 0 0 0 0.2rem rgba(58, 176, 195, 0.5);
+}
+
+.btn-info.disabled,
+.btn-info:disabled {
+	color: #fff;
+	background-color: #17a2b8;
+	border-color: #17a2b8;
+}
+
+.btn-info:not(:disabled):not(.disabled):active,
+.btn-info:not(:disabled):not(.disabled).active,
+.show > .btn-info.dropdown-toggle {
+	color: #fff;
+	background-color: #117a8b;
+	border-color: #10707f;
+}
+
+.btn-info:not(:disabled):not(.disabled):active:focus,
+.btn-info:not(:disabled):not(.disabled).active:focus,
+.show > .btn-info.dropdown-toggle:focus {
+	box-shadow: 0 0 0 0.2rem rgba(58, 176, 195, 0.5);
+}
+
+.btn-info {
+	color: #fff;
+	background-color: #9933cc;
+	border-color: #9933cc;
+}
+.btn-info:hover {
+	color: #fff;
+	background-color: #822bad;
+	border-color: #7a29a3;
+}
+.btn-info:focus,
+.btn-info.focus {
+	color: #fff;
+	background-color: #822bad;
+	border-color: #7a29a3;
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(168, 82, 212, 0.5);
+	box-shadow: 0 0 0 0.2rem rgba(168, 82, 212, 0.5);
+}
+.btn-info.disabled,
+.btn-info:disabled {
+	color: #fff;
+	background-color: #9933cc;
+	border-color: #9933cc;
+}
+.btn-info:not(:disabled):not(.disabled):active,
+.btn-info:not(:disabled):not(.disabled).active,
+.show > .btn-info.dropdown-toggle {
+	color: #fff;
+	background-color: #7a29a3;
+	border-color: #732699;
+}
+.btn-info:not(:disabled):not(.disabled):active:focus,
+.btn-info:not(:disabled):not(.disabled).active:focus,
+.show > .btn-info.dropdown-toggle:focus {
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(168, 82, 212, 0.5);
+	box-shadow: 0 0 0 0.2rem rgba(168, 82, 212, 0.5);
 }

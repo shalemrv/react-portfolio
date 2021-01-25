@@ -25,6 +25,7 @@
 }
 #overviewElementsContainer > div {
 	width: 15%;
+	transition: all 0.5s ease-in-out;
 }
 
 .pageDividerSvg {
@@ -54,6 +55,6 @@
 		padding: 0 7% 0 7%;
 	} */
 	#overviewElementsContainer > div {
-		width: 25%;
+		width: 30%;
 	}
 }

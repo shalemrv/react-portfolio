@@ -2,14 +2,20 @@
 	background: #1c1c28;
 }
 
+#contact-body-container {
+	display: grid;
+	grid-template-columns: 1.5rem 1fr;
+	grid-column-gap: 3rem;
+}
 #contact-details-container {
 	display: grid;
-	grid-template-columns: 4fr 6fr;
-	grid-template-areas: "contactForm contactInfo";
+	grid-template-columns: 1fr 400px 1fr;
+	grid-column-gap: 2rem;
+	/* grid-template-areas: "contactForm contactInfo"; */
 }
 
 #contact-form-container {
-	margin: 0 3rem;
+	margin: 0;
 	grid-area: contactForm;
 }
 
@@ -39,22 +45,29 @@
 
 #social-links-container {
 	display: flex;
+	flex-direction: column;
 	justify-content: space-around;
 	text-align: center;
 	margin: 2rem 0;
-	display: flex;
-	justify-content: space-around;
-	background: linear-gradient(90deg, #008cff, #ffffff, #008cff);
-	background: linear-gradient(90deg, #490074, #ffffff, #490074);
-	border-top: 3px solid black;
-	border-bottom: 3px solid black;
-	box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.9);
+	background: linear-gradient(180deg, #008cff, #ffffff, #008cff);
+	background: linear-gradient(180deg, #490074, #ffffff, #490074);
+	/* border-top: 3px solid black;
+	border-bottom: 3px solid black; */
+	border-radius: 0 500px 500px 0;
+	padding: 3rem 0;
+	box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.5);
 }
 
 #social-links-container img {
 	width: 3rem;
 	height: 3rem;
 	object-fit: contain;
+	transition: all 0.2s ease-in-out;
+}
+
+#social-links-container img:hover {
+	transform: scale(1.25);
+	width: 5rem;
 }
 
 .contact-info {

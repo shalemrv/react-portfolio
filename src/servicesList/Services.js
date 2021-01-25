@@ -42,7 +42,7 @@ export class Services extends Component {
 			<section id={"services"} className="cont-view view-grid">
 				<div className="text-align-center">
 					<div className="view-heading">
-						SERVICES
+						Services
 					</div>
 				</div>
 				<div id={"serv-cards-container"}>

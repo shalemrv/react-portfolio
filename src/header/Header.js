@@ -9,7 +9,7 @@ export class Header extends Component {
 
 		window.addEventListener("scroll", ()=>{
 			var header = document.querySelector("header");
-			header.classList.toggle("sticky", window.scrollY > 80);
+			header.classList.toggle("sticky", window.scrollY > 50);
 		});
 	}
 

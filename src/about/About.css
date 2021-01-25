@@ -1,14 +1,57 @@
 #about {
 	background: #3c0054;
-	padding: 4rem 0 2rem 0;
+	padding: 4rem 0;
+	width: 100vw;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-areas:
+		"aboutTitleGC aboutTitleGC aboutTitleGC aboutTitleGC aboutTitleGC"
+		"aboutDetailsGC aboutDetailsGC aboutDetailsGC aboutAnimationGC aboutAnimationGC"
+		"expTitleGC expTitleGC expTitleGC expTitleGC expTitleGC"
+		"expAnimationGC expAnimationGC expDetailsGC expDetailsGC expDetailsGC";
+}
+
+.aboutTitleGC {
+	grid-area: aboutTitleGC;
+	margin-bottom: 2rem;
+}
+
+.aboutDetailsGC {
+	grid-area: aboutDetailsGC;
+}
+
+.aboutAnimationGC {
+	grid-area: aboutAnimationGC;
+}
+
+.expTitleGC {
+	padding-right: 5rem;
+	grid-area: expTitleGC;
+	margin-top: 5rem;
+	padding-bottom: 5rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.expTitleGC .myBTN {
+	margin-top: 2rem;
+}
+
+.expAnimationGC {
+	grid-area: expAnimationGC;
+}
+
+.expDetailsGC {
+	grid-area: expDetailsGC;
 }
 
 #about-card {
 	padding: 1rem;
 	margin: 1rem;
-	display: grid;
+	/* display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-row-gap: 1rem;
+	grid-row-gap: 1rem; */
 	width: 100%;
 	overflow-y: auto;
 }
@@ -28,13 +71,13 @@
 	border-radius: 0 10px 10px 0;
 	margin: 15px 0px;
 }
-
+/* 
 #aboutSkillsAnimationContainer,
 #experienceAnimationContainer {
-	/* display: flex;
+	display: flex;
 	justify-content: center;
-	align-items: center; */
-}
+	align-items: center; 
+} */
 
 #dev-img-div img {
 	width: 90px;
@@ -272,6 +315,32 @@
 }
 
 @media screen and (max-width: 768px) {
+	#about {
+		background: #3c0054;
+		padding: 4rem 0 2rem 0;
+		width: 100vw;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"aboutTitleGC"
+			"aboutAnimationGC"
+			"aboutDetailsGC"
+			"expTitleGC"
+			"expAnimationGC"
+			"expDetailsGC";
+	}
+	.aboutAnimationGC svg {
+		margin-top: 2rem;
+		height: 15vh;
+		margin-bottom: -2rem;
+	}
+	.expAnimationGC svg {
+		margin-top: 2rem;
+		height: 15vh;
+	}
+	#t-skill-qualities-div {
+		grid-template-columns: 1fr;
+	}
 	/*ABOUT*/
 	#about-card {
 		grid-template-columns: 1fr;

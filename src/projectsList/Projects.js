@@ -45,7 +45,7 @@ export class Projects extends Component {
 			<section id={"projects"} className="cont-view view-grid">
 				<div className="text-align-center">
 					<div className="view-heading">
-						PROJECTS
+						Projects
 					</div>
 				</div>
 				<div id={"proj-cards"}>
