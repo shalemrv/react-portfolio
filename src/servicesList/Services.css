@@ -1,6 +1,66 @@
 #services {
 	background: #3c0054;
 }
+
+#services-flex-container {
+	display: flex;
+}
+
+.service-card-container {
+	width: 25rem;
+	padding: 3rem;
+}
+.service-card {
+	border-radius: 7px 7px 3px 3px;
+	overflow: hidden;
+	transition: all 0.25s ease-in-out;
+	background-color: #322f3d;
+	background-color: black;
+	box-shadow: 0.25rem 0.25rem 5px rgba(0, 0, 0, 0.25);
+}
+.service-card-container:hover .service-card {
+	background-color: #2f89fc;
+}
+.service-card-container:hover * {
+	color: black;
+}
+.card-bg {
+	height: 7.5rem;
+	overflow: hidden;
+}
+.card-bg-img {
+	transition: all 0.5s ease-in-out;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.service-card-container:hover .card-bg-img {
+	transform-origin: 50% 50%;
+	transform: scale(2);
+	filter: brightness(0.25);
+}
+.tech-title {
+	padding: 0.5rem 1rem;
+	padding-top: 1rem;
+	font-size: 1.5rem;
+}
+.tech-description {
+	padding: 0.5rem 1rem;
+	font-size: 0.75rem;
+}
+.tech-description p {
+	letter-spacing: 0.5px;
+}
+.service-card-container:hover .tech-description p {
+	text-shadow: 0 0 2px black;
+}
+.tech-description p:last-child {
+	letter-spacing: 1px;
+	padding: 0.75rem 0.5rem;
+	font-weight: bold;
+	text-align: center;
+}
+
 #serv-cards-container::-webkit-scrollbar {
 	display: none;
 }

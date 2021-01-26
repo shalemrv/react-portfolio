@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-import './Services.css';
+// import './Services.css';
+import './services.scss';
 
 import msAccessPng from "../assets/technologies/msAccess.png";
 import angular1Png from "../assets/technologies/angular1.png";
@@ -16,24 +17,43 @@ import vstudPng from  "../assets/technologies/vstud.png";
 import bootstrapPng from  "../assets/technologies/bootstrap.png";
 import htmlPng from  "../assets/technologies/html.png";
 
+import bgAngular1 from "../assets/technologies/bg/angular1.jpg";
+import bgAngular2Plus from "../assets/technologies/bg/angular2plus.jpg";
+import bgBootstrap from "../assets/technologies/bg/bootstrap.jpg";
+import bgHtml from "../assets/technologies/bg/html.jpg";
+import bgJavascript from "../assets/technologies/bg/javascript.jpg";
+import bgPhp from "../assets/technologies/bg/php.jpg";
+import bgReact from "../assets/technologies/bg/react.jpg";
+import bgVisualStudio from "../assets/technologies/bg/visual-studio.jpg";
+
 export class Services extends Component {
 
 	state = {
 		servicesList : this.props.servicesList,
 		images : {
-			msAccess	: msAccessPng,
-			angular1	: angular1Png,
-			angular9	: angular9Png,
-			express		: expressPng,
-			htmlCssJs	: htmlCssJsPng,
-			mongodb		: mongodbPng,
-			mysql		: mysqlPng,
-			node		: nodePng,
-			php			: phpPng,
-			vb			: vbPng,
-			vstud		: vstudPng,
-			bootstrap	: bootstrapPng,
-			html		: htmlPng
+			msAccess		: msAccessPng,
+			angular1		: angular1Png,
+			angular2plus	: angular9Png,
+			express			: expressPng,
+			htmlCssJs		: htmlCssJsPng,
+			mongodb			: mongodbPng,
+			mysql			: mysqlPng,
+			node			: nodePng,
+			php				: phpPng,
+			vb				: vbPng,
+			vstud			: vstudPng,
+			bootstrap		: bootstrapPng,
+			html			: htmlPng
+		},
+		bg : {
+			angular1		: bgAngular1,
+			angular2plus	: bgAngular2Plus,
+			bootstrap		: bgBootstrap,
+			html			: bgHtml,
+			htmlCssJs		: bgJavascript,
+			php				: bgPhp,
+			react			: bgReact,
+			vstud			: bgVisualStudio
 		}
 	};
 
@@ -45,24 +65,28 @@ export class Services extends Component {
 						Services
 					</div>
 				</div>
-				<div id={"serv-cards-container"}>
+				<div id={"services-flex-container"}>
 					{
 						this.state.servicesList.map(
-							(service, sIndex)=>{
-								return <div className="serv-cards" key={`service${sIndex}`}>
-									<div className="service-card-new">
-										<div className="service-img-container">
-											<img className="service-tech-img" src={this.state.images[service.img]} alt={service.title}/>
+							(service, sIndex) => {
+								return <div className="service-card-container" key={`service${sIndex}`}>
+									<div className="service-card">
+										<div className="card-bg">
+											<img
+												className="card-bg-img"
+												src={this.state.bg[service.img]}
+												alt={service.title}
+											/>
 										</div>
-										<div>
-											<div className="service-card-title">
-												<h2>
-													<div className="service-title-div">
-														<span className="service-title-span Orbitron">{service.title}</span>
-													</div>
-												</h2>
-											</div>
-											<p>{service.desc}</p>
+										<div className="tech-title Montserrat">{service.title}</div>
+										<div className="tech-description Montserrat">
+											{
+												service.desc.map(
+													(pDesc, pInd) => {
+														return <p key={`sDesc${pInd}`}>{pDesc}</p>
+													}
+												)
+											}
 										</div>
 									</div>
 								</div>
