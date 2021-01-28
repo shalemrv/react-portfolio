@@ -8,9 +8,12 @@
 	grid-column-gap: 3rem;
 }
 #contact-details-container {
+	padding: 2rem;
 	display: grid;
-	grid-template-columns: 1fr 400px 1fr;
+	grid-template-columns: 1fr 1fr;
 	grid-column-gap: 2rem;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 10px 5px;
 	/* grid-template-areas: "contactForm contactInfo"; */
 }
 
@@ -41,6 +44,8 @@
 #contact-info-container {
 	display: flex;
 	align-items: center;
+	justify-content: center;
+	padding: 2rem 5rem;
 }
 
 #social-links-container {
@@ -71,10 +76,11 @@
 }
 
 .contact-info {
-	display: grid;
-	grid-template-columns: 4rem 1fr;
+	display: inline-grid;
+	grid-template-columns: 4rem 20rem;
 	margin: 1rem 2rem;
 	cursor: pointer;
+	background-color: #490074;
 }
 .contact-icon-container {
 	display: flex;

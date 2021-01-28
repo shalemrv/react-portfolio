@@ -317,6 +317,44 @@ export class Contact extends Component {
 					</div>
 					<div id={"contact-details-container"}>
 						<div>
+							<div
+								className="contact-info"
+								onClick={this.handlePhoneClick}
+								title="Copy To Clipboard"
+							>
+								<div className="contact-icon-container">
+									<img src={PhonePng} alt={`Phone`}/>
+								</div>
+								<h3>
+									+91 9060 317 334
+								</h3>
+							</div>
+							<div
+								className="contact-info"
+								onClick={this.handleEmailClick}
+								title="Copy to Clipboard"
+							>
+								<div className="contact-icon-container">
+									<img src={EmailPng} alt={`Email`}/>
+								</div>
+								<h3>
+									shalemrv@gmail.com
+								</h3>
+							</div>
+							<div
+								className="contact-info"
+								title="Copy To Clipboard"
+								onClick={this.handleWhatsappClick}
+							>
+								<div className="contact-icon-container">
+									<img src={WhatsappPng} alt={`Whatsapp`}/>
+								</div>
+								<h3>
+									+91 9060 317 334
+								</h3>
+							</div>
+						</div>
+						<div>
 							<div id={"contact-form-container"}>
 								<form onSubmit={this.submitMessage}>
 									<h4 className="title">
@@ -407,82 +445,47 @@ export class Contact extends Component {
 					</div>
 				</div>
 				
-				<div id={"contact-info-container"}>
-							<div>
-								<div
-									className="contact-info"
-									onClick={this.handlePhoneClick}
-									title="Copy To Clipboard"
-								>
-									<div className="contact-icon-container">
-										<img src={PhonePng} alt={`Phone`}/>
-									</div>
-									<h3>
-										+91 9060 317 334
+				<div id={"contact-info-container"}></div>
+				
+				<div>
+					
+					
+					{
+						!!this.state.ipDetails.exists &&
+						<div>
+							<br/><br/>
+							<div id={"ipDetailsContainer"}>
+								<div id={"ipDetailsLabel"}>
+									<span className="Dosis">
+										IP Details
+									</span>
+								</div>
+								<div id={"ipAddressContainer"}>
+									<span id={"ipAddressLabel"}>IP Address</span>
+									<h3 className="Orbitron">{this.state.ipDetails.ip}</h3>
+								</div>
+								<div id={"iplocationContainer"}>
+									<div id={"iplocationLabel"}>Location</div>
+									<h3 className="Poppins">{this.state.ipDetails.city}, {this.state.ipDetails.region}</h3>
+									<h3 className="Orbitron">
+										<img src={this.state.ipDetails.flag} alt="flag" />
+										{this.state.ipDetails.country}
 									</h3>
 								</div>
-								<div
-									className="contact-info"
-									onClick={this.handleEmailClick}
-									title="Copy to Clipboard"
-								>
-									<div className="contact-icon-container">
-										<img src={EmailPng} alt={`Email`}/>
-									</div>
-									<h3>
-										shalemrv@gmail.com
-									</h3>
-								</div>
-								<div
-									className="contact-info"
-									title="Copy To Clipboard"
-									onClick={this.handleWhatsappClick}
-								>
-									<div className="contact-icon-container">
-										<img src={WhatsappPng} alt={`Whatsapp`}/>
-									</div>
-									<h3>
-										+91 9060 317 334
-									</h3>
-								</div>
+								<br/>
+								<a id={"ipstackA"} href="https://ipstack.com" target="_blank" rel="noreferrer" title="API Source">
+									<img src={IpStackPng} alt="flag" style={{height: '2rem', borderRadius: '500px'}}/>
+								</a>
 							</div>
-							
-							{
-								!!this.state.ipDetails.exists &&
-								<div>
-									<br/><br/>
-									<div id={"ipDetailsContainer"}>
-										<div id={"ipDetailsLabel"}>
-											<span className="Dosis">
-												IP Details
-											</span>
-										</div>
-										<div id={"ipAddressContainer"}>
-											<span id={"ipAddressLabel"}>IP Address</span>
-											<h3 className="Orbitron">{this.state.ipDetails.ip}</h3>
-										</div>
-										<div id={"iplocationContainer"}>
-											<div id={"iplocationLabel"}>Location</div>
-											<h3 className="Poppins">{this.state.ipDetails.city}, {this.state.ipDetails.region}</h3>
-											<h3 className="Orbitron">
-												<img src={this.state.ipDetails.flag} alt="flag" />
-												{this.state.ipDetails.country}
-											</h3>
-										</div>
-										<br/>
-										<a id={"ipstackA"} href="https://ipstack.com" target="_blank" rel="noreferrer" title="API Source">
-											<img src={IpStackPng} alt="flag" style={{height: '2rem', borderRadius: '500px'}}/>
-										</a>
-									</div>
-									<h4>
-										{this.state.visitDetails.count}
-										<br/>
-										{this.state.visitDetails.address.fullAddress}
-										<span><h6>Page Visits</h6></span>
-									</h4>
-								</div>
-							}
+							<h4>
+								{this.state.visitDetails.count}
+								<br/>
+								{this.state.visitDetails.address.fullAddress}
+								<span><h6>Page Visits</h6></span>
+							</h4>
 						</div>
+					}
+				</div>
 					
 			</section>
 		)
