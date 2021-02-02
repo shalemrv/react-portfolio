@@ -356,14 +356,14 @@ export class Contact extends Component {
 								</h3>
 							</div>
 						</div>
-						<div>
+						<div id={"contactLottieContainer"}>
 							<Player
 								src={ContactAnimationJSON}
 								background="transparent"
 								autoplay={true}
 								speed={"1"}
 								loop={true}
-								style={{ width: '90%' }}
+								style={{ width: '100%'}}
 							>
 							</Player>
 						</div>
