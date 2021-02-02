@@ -298,22 +298,24 @@ export class Contact extends Component {
 					</div>
 				</div>
 				<div id={"contact-body-container"}>
-					<div id={"social-links-container"}>
-						<a target="_blank" rel="noreferrer" href="https://www.instagram.com/we_shall_aim">
-							<img src={InstaPng} alt="Instagram"/>
-						</a>
-						<a target="_blank" rel="noreferrer" href="https://www.facebook.com/weShallAim">
-							<img src={FbPng} alt="Facebook"/>
-						</a>
-						<a target="_blank" rel="noreferrer" href="https://github.com/shalemrv/">
-							<img src={GithubPng} alt="Github"/>
-						</a>
-						<a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/shalemrv">
-							<img src={LinkedInPng} alt="LinkedIn"/>
-						</a>
-						<a target="_blank" rel="noreferrer" href="https://twitter.com/weShallAim">
-							<img src={TwitterPng} alt="Twitter"/>
-						</a>
+					<div>
+						<div id={"social-links-container"}>
+							<a target="_blank" rel="noreferrer" href="https://www.instagram.com/we_shall_aim">
+								<img src={InstaPng} alt="Instagram"/>
+							</a>
+							<a target="_blank" rel="noreferrer" href="https://www.facebook.com/weShallAim">
+								<img src={FbPng} alt="Facebook"/>
+							</a>
+							<a target="_blank" rel="noreferrer" href="https://github.com/shalemrv/">
+								<img src={GithubPng} alt="Github"/>
+							</a>
+							<a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/shalemrv">
+								<img src={LinkedInPng} alt="LinkedIn"/>
+							</a>
+							<a target="_blank" rel="noreferrer" href="https://twitter.com/weShallAim">
+								<img src={TwitterPng} alt="Twitter"/>
+							</a>
+						</div>
 					</div>
 					<div id={"contact-details-container"}>
 						<div>
@@ -355,97 +357,96 @@ export class Contact extends Component {
 							</div>
 						</div>
 						<div>
-							<div id={"contact-form-container"}>
-								<form onSubmit={this.submitMessage}>
-									<h4 className="title">
-										Drop a message.
-									</h4>
-									<div className="cust-input-container">
-										<input
-											type="text"
-											value={this.state.newMessage.company}
-											onChange={this.updateCompany}
-											title="Company Name to be at least 5 characters long."
-											placeholder="Company Name"
-											autoComplete="off"
-											required
-										/>
-										<label className="custom-label">
-											<span className="custom-placeholder">
-												Company Name
-											</span>
-										</label>
-									</div>
-									<div className="cust-input-container">
-										<input
-											type="text"
-											value={this.state.newMessage.name}
-											onChange={this.updateName}
-											placeholder="Contact Person (your name)"
-											title="Name cannot contain numbers or special characters"
-											autoComplete="off"
-											required
-										/>
-										<label className="custom-label">
-											<span className="custom-placeholder">
-												Contact Person (your name)
-											</span>
-										</label>
-									</div>
-
-									<div className="cust-input-container">
-										<input
-											type="email"
-											value={this.state.newMessage.email}
-											onChange={this.updateEmail}
-											placeholder="Email"
-											autoComplete="off"
-											required
-										/>
-										<label className="custom-label">
-											<span className="custom-placeholder">
-												Email
-											</span>
-										</label>
-									</div>
-
-									<div className="cust-input-container">
-										<textarea
-											value={this.state.newMessage.body}
-											onChange={this.updateBody}
-											placeholder="Your Message"
-											autoComplete="off"
-											required
-										></textarea>
-										<label className="custom-label">
-											<span className="custom-placeholder">
-												Your Message
-											</span>
-										</label>
-									</div>
-
-									<div style={{textAlign: 'center'}}>
-										<button type="submit" className="btn btn-info">
-											Submit
-										</button>
-									</div>
-								</form>
-							</div>
+							<Player
+								src={ContactAnimationJSON}
+								background="transparent"
+								autoplay={true}
+								speed={"1"}
+								loop={true}
+								style={{ width: '90%' }}
+							>
+							</Player>
 						</div>
 						
-						<Player
-							src={ContactAnimationJSON}
-							background="transparent"
-							autoplay={true}
-							speed={"1"}
-							loop={true}
-							style={{ width: '90%' }}
-						>
-						</Player>
+						<div id={"contact-form-container"}>
+							<form onSubmit={this.submitMessage}>
+								<h4 className="title">
+									Drop a message.
+								</h4>
+								<div className="cust-input-container">
+									<input
+										type="text"
+										value={this.state.newMessage.company}
+										onChange={this.updateCompany}
+										title="Company Name to be at least 5 characters long."
+										placeholder="Company Name"
+										autoComplete="off"
+										required
+									/>
+									<label className="custom-label">
+										<span className="custom-placeholder">
+											Company Name
+										</span>
+									</label>
+								</div>
+								<div className="cust-input-container">
+									<input
+										type="text"
+										value={this.state.newMessage.name}
+										onChange={this.updateName}
+										placeholder="Contact Person (your name)"
+										title="Name cannot contain numbers or special characters"
+										autoComplete="off"
+										required
+									/>
+									<label className="custom-label">
+										<span className="custom-placeholder">
+											Contact Person (your name)
+										</span>
+									</label>
+								</div>
+
+								<div className="cust-input-container">
+									<input
+										type="email"
+										value={this.state.newMessage.email}
+										onChange={this.updateEmail}
+										placeholder="Email"
+										autoComplete="off"
+										required
+									/>
+									<label className="custom-label">
+										<span className="custom-placeholder">
+											Email
+										</span>
+									</label>
+								</div>
+
+								<div className="cust-input-container">
+									<textarea
+										value={this.state.newMessage.body}
+										onChange={this.updateBody}
+										placeholder="Your Message"
+										autoComplete="off"
+										required
+									></textarea>
+									<label className="custom-label">
+										<span className="custom-placeholder">
+											Your Message
+										</span>
+									</label>
+								</div>
+
+								<div style={{textAlign: 'center'}}>
+									<button type="submit" className="btn btn-info">
+										Submit
+									</button>
+								</div>
+							</form>
+						</div>
 					</div>
 				</div>
 				
-				<div id={"contact-info-container"}></div>
 				
 				<div>
 					
