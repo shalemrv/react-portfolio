@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
+
 import axios from './auth';
 
 import Home from './home/Home';
@@ -46,7 +46,6 @@ export class PageContent extends Component {
 				window.setTimeout(()=>{
 					this.setState({ dataLoading : false });
 				}, 1500);
-				// window.setTimeout(this.getPortfolioData, 2000);
 			}
 		);
 	}
@@ -54,6 +53,7 @@ export class PageContent extends Component {
 	componentDidMount(){
 		this.getPortfolioData();
 	}
+
 	render() {
 		return (
 			<div>

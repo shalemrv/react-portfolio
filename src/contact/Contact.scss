@@ -12,11 +12,6 @@
 	justify-content: flex-start;
 }
 
-#contact-body-container {
-	border-radius: 10px;
-	overflow: hidden;
-	margin: 1rem 2rem;
-}
 #contact-details-container {
 	display: grid;
 	grid-template-columns: 4fr 5fr;
@@ -25,6 +20,9 @@
 	margin-top: 2rem;
 	position: relative;
 	overflow: hidden;
+	border-radius: 10px;
+	overflow: hidden;
+	margin: 1rem 2rem;
 }
 
 .contact-body-p1 {
@@ -128,9 +126,12 @@
 	margin: 1rem 0rem;
 	cursor: pointer;
 	background-color: #490074;
-	border-radius: 500px;
+	background: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(5px);
+	border-radius: 10px 500px 500px 10px;
 	padding: 0.5rem 1rem;
 	z-index: 3;
+	box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.25);
 }
 .contact-icon-container {
 	display: flex;
