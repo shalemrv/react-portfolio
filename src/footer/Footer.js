@@ -41,14 +41,31 @@ export class Footer extends Component {
 							<br/>
 							
 						</div>
+					</div>
+				}
+				{
+					!!this.state.visitDetails &&
+					<div className="pageVisits">
 						<h4>
-							{this.state.visitDetails.count}
+							{this.state.visitDetails.count} Page Visits
 							<br/>
+							<br/>
+							<h6>Last Visit</h6>
 							{this.state.visitDetails.address.fullAddress}
-							<span><h6>Page Visits</h6></span>
 						</h4>
 					</div>
 				}
+				<div className="technologies">
+					<h4>
+						React JS
+					</h4>
+					<h4>
+						PHP
+					</h4>
+					<h4>
+						MySQL
+					</h4>
+				</div>
 			</div>
 		)
 	}
