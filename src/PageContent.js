@@ -2,18 +2,16 @@ import React, { Component } from 'react';
 
 import axios from './auth';
 
+import PageLoader from './pageLoader/PageLoader';
 import Home from './home/Home';
 import About from './about/About';
 import Projects from './projectsList/Projects';
 import Services from './servicesList/Services';
 import Contact from './contact/Contact';
-
-import {ReactComponent as Divider2Svg} from './assets/svg/dividers/2.svg';
-import {ReactComponent as Divider3Svg} from './assets/svg/dividers/3.svg';
-import {ReactComponent as Divider4Svg} from './assets/svg/dividers/4.svg';
+import Footer from './footer/Footer';
 
 export class PageContent extends Component {
-	state = {  
+	state = {
 		portfolioData: {},
 		dataLoading : true,
 		loadingLabel : "Loading portfolio data...",
@@ -57,66 +55,21 @@ export class PageContent extends Component {
 	render() {
 		return (
 			<div>
-				<div id={"page-loader-container"}>
-					<div className="wavy-spring">
-						<span className="circlesContainer">
-							<span className="circle"></span>
-							<span className="circle"></span>
-							<span className="circle"></span>
-							<span className="circle"></span>
-							<span className="circle"></span>
-							<span className="circle"></span>
-							<span className="circle"></span>
-							<span className="circle"></span>
-							<span className="circle"></span>
-							<span className="circle"></span>
-							<span className="circle"></span>
-							<span className="circle"></span>
-							<span className="circle"></span>
-							<span className="circle"></span>
-							<span className="circle"></span>
-						</span>
-					</div>
-					<h2 style={{ textAlign: 'center' }}>{this.state.loadingLabel}</h2>
-				</div>
+				<PageLoader loadingLabel={this.state.loadingLabel}/>
 				{
 					!this.state.dataLoading &&
 					<div className="page-content">
 						<Home/>
-						{
-							!!this.state.portfolioData?.skills?.advanced &&
-							<About skills={this.state.portfolioData?.skills}/>
-						}
-						{
-							!!this.state.portfolioData?.skills?.advanced &&
-							<div className="sectionDividerSvg" style={{background: '#3c0054'}}>
-								<Divider2Svg />
-							</div>
-						}
-						{
-							!!this.state.portfolioData?.projectsList &&
-							<Projects projectsList={this.state.portfolioData?.projectsList}/>
-						}
-						{
-							!!this.state.portfolioData?.projectsList &&
-							<div className="sectionDividerSvg" style={{background: '#3c0054'}}>
-								<Divider3Svg />
-							</div>
-						}
-						{
-							!!this.state.portfolioData?.servicesList &&
-							<Services servicesList={this.state.portfolioData?.servicesList}/>
-						}
-						{
-							!!this.state.portfolioData?.servicesList &&
-							<div className="sectionDividerSvg" style={{background: '#3c0054'}}>
-								<Divider4Svg />
-							</div>
-						}
-						{
-							!!this.state.portfolioData?.visitDetails &&
-							<Contact ipDetails={this.state.portfolioData?.ipDetails} visitDetails={this.state.portfolioData?.visitDetails}/>
-						}
+						
+						<About skills={this.state.portfolioData?.skills}/>
+						
+						<Projects projectsList={this.state.portfolioData?.projectsList}/>
+
+						<Services servicesList={this.state.portfolioData?.servicesList}/>
+						
+						<Contact/>
+
+						<Footer ipDetails={this.state.portfolioData?.ipDetails} visitDetails={this.state.portfolioData?.visitDetails}/>
 					</div>
 				}
 			</div>

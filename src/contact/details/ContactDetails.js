@@ -4,21 +4,24 @@ import swal from 'sweetalert';
 
 import { Player } from '@lottiefiles/react-lottie-player';
 
-import ContactAnimationJSON from '../assets/lottie/contact-mail-37147-contact-us.json';
+import ContactDetailsAnimationJSON from '../../assets/lottie/contact-phone-mail-41675-phone-and-email-communication-animation.json';
 
-import GithubPng from '../assets/contact/social/github.png';
-import FbPng from '../assets/contact/social/fb.png';
-import InstaPng from '../assets/contact/social/insta.png';
-import LinkedInPng from '../assets/contact/social/linkedin.png';
-import TwitterPng from '../assets/contact/social/twitter.png';
 
-import ContactBG1 from '../assets/contact/contact-bg-1.jpg';
-import ContactBG2 from '../assets/contact/contact-bg-2.jpg';
-import ContactBG3 from '../assets/contact/contact-bg-3.jpg';
+import GithubPng from '../../assets/contact/social/github.png';
+import FbPng from '../../assets/contact/social/fb.png';
+import InstaPng from '../../assets/contact/social/insta.png';
+import LinkedInPng from '../../assets/contact/social/linkedin.png';
+import TwitterPng from '../../assets/contact/social/twitter.png';
 
-import PhonePng from '../assets/contact/phone.png';
-import EmailPng from '../assets/contact/email.png';
-import WhatsappPng from '../assets/contact/whatsapp.png';
+import ContactBG1 from '../../assets/contact/contact-bg-1.jpg';
+// import ContactBG2 from '../../assets/contact/contact-bg-2.jpg';
+// import ContactBG3 from '../../assets/contact/contact-bg-3.jpg';
+
+import PhonePng from '../../assets/contact/phone.png';
+import EmailPng from '../../assets/contact/email.png';
+import WhatsappPng from '../../assets/contact/whatsapp.png';
+
+import './ContactDetails.scss'
 
 export class ContactDetails extends Component {
 	constructor(props){
@@ -157,7 +160,7 @@ export class ContactDetails extends Component {
 		return (
 			<div className="contact-body-p1">
 				<div className="contact-details-bg">
-					<img src={ContactBG3}/>
+					<img src={ContactBG1} alt={`Contact`}/>
 				</div>
 			
 				<div id={"social-links-container"}>
@@ -177,10 +180,8 @@ export class ContactDetails extends Component {
 						<img src={TwitterPng} alt="Twitter"/>
 					</a>
 				</div>
-					
 				
-				<div>
-					
+				<div className="contact-info-animation-container">
 					<div className="contact-info-container">
 						<div
 							className="contact-info"
@@ -221,7 +222,7 @@ export class ContactDetails extends Component {
 					</div>
 					<div>
 						<Player
-							src={ContactAnimationJSON}
+							src={ContactDetailsAnimationJSON}
 							background="transparent"
 							autoplay={true}
 							speed={"1"}

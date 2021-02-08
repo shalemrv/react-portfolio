@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import { Player, Controls } from '@lottiefiles/react-lottie-player';
+// import { Player, Controls } from '@lottiefiles/react-lottie-player';
 
-import DeveloperAnimationJSON from '../assets/lottie/home-41504-developer-is-programming-using-notebook.json';
+// import DeveloperAnimationJSON from '../assets/lottie/home-41504-developer-is-programming-using-notebook.json';
 
 import './Carousel.css';
 import './Home.css';

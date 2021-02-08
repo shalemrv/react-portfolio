@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
-// import './Services.css';
 import './services.scss';
+
+import {ReactComponent as ServicesDividerSvg} from '../assets/svg/dividers/4.svg';
 
 import msAccessPng from "../assets/technologies/msAccess.png";
 import angular1Png from "../assets/technologies/angular1.png";
@@ -58,43 +59,51 @@ export class Services extends Component {
 	};
 
 	render() {
+		if(!this.state.servicesList || this.state.servicesList?.length === 0){
+			return null;
+		}
 		return (
-			<section id={"services"} className="cont-view view-grid">
-				<div className="text-align-center">
-					<div className="view-heading">
-						Services
+			<>
+				<section id={"services"} className="cont-view view-grid">
+					<div className="text-align-center">
+						<div className="view-heading">
+							Services
+						</div>
 					</div>
-				</div>
-				<div id={"services-flex-container"}>
-					{
-						this.state.servicesList.map(
-							(service, sIndex) => {
-								return <div className="service-card-container" key={`service${sIndex}`}>
-									<div className="service-card">
-										<div className="card-bg">
-											<img
-												className="card-bg-img"
-												src={this.state.bg[service.img]}
-												alt={service.title}
-											/>
-										</div>
-										<div className="tech-title Montserrat">{service.title}</div>
-										<div className="tech-description Montserrat">
-											{
-												service.desc.map(
-													(pDesc, pInd) => {
-														return <p key={`sDesc${pInd}`}>{pDesc}</p>
-													}
-												)
-											}
+					<div id={"services-flex-container"}>
+						{
+							this.state.servicesList.map(
+								(service, sIndex) => {
+									return <div className="service-card-container" key={`service${sIndex}`}>
+										<div className="service-card">
+											<div className="card-bg">
+												<img
+													className="card-bg-img"
+													src={this.state.bg[service.img]}
+													alt={service.title}
+												/>
+											</div>
+											<div className="tech-title Montserrat">{service.title}</div>
+											<div className="tech-description Montserrat">
+												{
+													service.desc.map(
+														(pDesc, pInd) => {
+															return <p key={`sDesc${pInd}`}>{pDesc}</p>
+														}
+													)
+												}
+											</div>
 										</div>
 									</div>
-								</div>
-							}
-						)
-					}
+								}
+							)
+						}
+					</div>
+				</section>
+				<div className="sectionDividerSvg" style={{background: '#3c0054'}}>
+					<ServicesDividerSvg />
 				</div>
-			</section>
+			</>
 		)
 	}
 }
