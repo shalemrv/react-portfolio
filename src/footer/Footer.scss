@@ -4,14 +4,66 @@
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+	flex-wrap: wrap;
 
 	.pageVisits {
 		border-left: 5px solid gray;
 		padding-left: 1.5rem;
 	}
 	.technologies {
+		margin: 2rem;
+		.siteLogoImg {
+			width: 10rem;
+		}
+		.techLabel {
+			padding-bottom: 0.5rem;
+		}
+		.techContainer {
+			display: grid;
+			grid-template-columns: 2.5rem auto;
+			img {
+				height: 1.75rem;
+			}
+		}
+	}
+
+	.newIpDetailsContainer {
 		border-left: 5px solid gray;
 		padding-left: 1.5rem;
+		margin: 2rem;
+
+		.ipDetailsLabel {
+			display: flex;
+			align-items: center;
+
+			.ipstackA {
+				img {
+					height: 1.75rem;
+					border-radius: 500px;
+					margin-left: 1rem;
+				}
+			}
+		}
+		.ipAddressValue {
+			letter-spacing: 3px;
+			margin-top: 5px;
+		}
+		.ipLocationPlace {
+			margin-top: 5px;
+		}
+		.ipLocationCountry {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-top: 2px;
+
+			img {
+				height: 1.5rem;
+				margin-right: 1rem;
+				border-radius: 10px 3px 3px 10px;
+				border-radius: 3px;
+			}
+		}
 	}
 }
 /* IP DETAILS */
@@ -56,6 +108,14 @@
 		}
 	}
 
+	#ipstackA {
+		img {
+			height: 2rem;
+			border-radius: 500px;
+			margin-left: 1rem;
+		}
+	}
+
 	#ipAddressContainer {
 		background-color: rgba(0, 140, 255, 0.75);
 		background-color: rgba(0, 0, 0, 0.5);
@@ -97,11 +157,4 @@
 			overflow: hidden;
 		}
 	}
-}
-
-#iplocationContainer #iplocationContainer h3 {
-	text-align: center;
-	margin-top: 0.5rem;
-	letter-spacing: 2px;
-	font-size: 1rem;
 }
