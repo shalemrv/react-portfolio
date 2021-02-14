@@ -9,6 +9,7 @@ import Projects from './projectsList/Projects';
 import Services from './servicesList/Services';
 import Contact from './contact/Contact';
 import Footer from './footer/Footer';
+import swal from 'sweetalert';
 
 export class PageContent extends Component {
 	state = {
@@ -29,10 +30,15 @@ export class PageContent extends Component {
 	}
 
 	getPortfolioData(){
-		axios.get(`http://127.0.0.1:11111/api/data.php`)
+		axios.get(`${process.env.REACT_APP_API}/api/data.php`)
 		.then(
-			(res) => {
-				this.setState({ portfolioData : res.data});
+			(httpResponse) => {
+				var apiResponse = httpResponse.data;
+				if(!apiResponse.complete){
+					swal("", apiResponse.message, "error");
+					return;
+				}
+				this.setState({ portfolioData : apiResponse.result});
 				window.setTimeout(()=>{
 					this.setState({ dataLoading : false });
 					this.hideLoadingDiv();
@@ -41,6 +47,7 @@ export class PageContent extends Component {
 		)
 		.catch(
 			(res) => {
+				swal("", "Something went wrong on the server", "error");
 				window.setTimeout(()=>{
 					this.setState({ dataLoading : false });
 				}, 1500);

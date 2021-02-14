@@ -41,6 +41,9 @@ export class Header extends Component {
 						<li>
 							<a onClick={this.toggleNavMenu} href="#contact">CONTACT</a>
 						</li>
+						<li>
+							<a onClick={this.toggleNavMenu} href="#footer">VISITORS</a>
+						</li>
 					</ul>
 					<div className="hamburger" onClick={this.toggleNavMenu}>
 						<div className="line line1"></div>

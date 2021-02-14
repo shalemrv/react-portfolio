@@ -14,8 +14,6 @@ import LinkedInPng from '../../assets/contact/social/linkedin.png';
 import TwitterPng from '../../assets/contact/social/twitter.png';
 
 import ContactBG1 from '../../assets/contact/contact-bg-1.jpg';
-// import ContactBG2 from '../../assets/contact/contact-bg-2.jpg';
-// import ContactBG3 from '../../assets/contact/contact-bg-3.jpg';
 
 import PhonePng from '../../assets/contact/phone.png';
 import EmailPng from '../../assets/contact/email.png';
@@ -162,26 +160,26 @@ export class ContactDetails extends Component {
 				<div className="contact-details-bg">
 					<img src={ContactBG1} alt={`Contact`}/>
 				</div>
-			
-				<div id={"social-links-container"}>
-					<a target="_blank" rel="noreferrer" href="https://www.instagram.com/we_shall_aim">
-						<img src={InstaPng} alt="Instagram"/>
-					</a>
-					<a target="_blank" rel="noreferrer" href="https://www.facebook.com/weShallAim">
-						<img src={FbPng} alt="Facebook"/>
-					</a>
-					<a target="_blank" rel="noreferrer" href="https://github.com/shalemrv/">
-						<img src={GithubPng} alt="Github"/>
-					</a>
-					<a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/shalemrv">
-						<img src={LinkedInPng} alt="LinkedIn"/>
-					</a>
-					<a target="_blank" rel="noreferrer" href="https://twitter.com/weShallAim">
-						<img src={TwitterPng} alt="Twitter"/>
-					</a>
-				</div>
-				
-				<div className="contact-info-animation-container">
+				<div className="social-contact-container">
+					<div className="social-links-wrapper">
+						<div className="social-links-container">
+							<a target="_blank" rel="noreferrer" href="https://www.instagram.com/we_shall_aim">
+								<img src={InstaPng} alt="Instagram"/>
+							</a>
+							<a target="_blank" rel="noreferrer" href="https://www.facebook.com/weShallAim">
+								<img src={FbPng} alt="Facebook"/>
+							</a>
+							<a target="_blank" rel="noreferrer" href="https://github.com/shalemrv/">
+								<img src={GithubPng} alt="Github"/>
+							</a>
+							<a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/shalemrv">
+								<img src={LinkedInPng} alt="LinkedIn"/>
+							</a>
+							<a target="_blank" rel="noreferrer" href="https://twitter.com/weShallAim">
+								<img src={TwitterPng} alt="Twitter"/>
+							</a>
+						</div>
+					</div>
 					<div className="contact-info-container">
 						<div
 							className="contact-info"
@@ -220,18 +218,19 @@ export class ContactDetails extends Component {
 							</h3>
 						</div>
 					</div>
-					<div>
+					<div className="contact-details-animation">
 						<Player
 							src={ContactDetailsAnimationJSON}
 							background="transparent"
 							autoplay={true}
 							speed={"1"}
 							loop={true}
-							style={{ width: '30%'}}
+							style={{ width: '50%'}}
 						>
 						</Player>
 					</div>
 				</div>
+				
 			</div>
 		)
 	}

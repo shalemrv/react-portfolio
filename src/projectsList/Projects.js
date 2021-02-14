@@ -19,7 +19,7 @@ import vstudPng from  "../assets/technologies/vstud.png";
 import htmlPng from  "../assets/technologies/html.png";
 
 
-import './Projects.css';
+import './Projects.scss';
 
 export class Projects extends Component {
 

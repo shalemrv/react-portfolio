@@ -124,7 +124,7 @@ export class DropMessageForm extends Component {
 		
 
 		axios.post(
-			`/api/messages.php?action=add`,
+			`${process.env.REACT_APP_API}/api/messages.php?action=add`,
 			this.state.newMessage
 		)
 		.then(httpResponse=>{
@@ -230,8 +230,7 @@ export class DropMessageForm extends Component {
 								speed={"1"}
 								loop={true}
 								style={{ width: '80%'}}
-							>
-							</Player>
+							></Player>
 						</div>
 					</div>
 					

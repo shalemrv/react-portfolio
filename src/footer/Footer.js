@@ -10,13 +10,13 @@ import './Footer.scss';
 
 export class Footer extends Component {
 	state = {
-		ipDetails		: this.props.ipDetails,
-		visitDetails	: this.props.visitDetails
+		ipDetails		: this.props?.ipDetails,
+		visitDetails	: this.props?.visitDetails
 	};
 
 	render() {
 		return (
-			<div className="footer">
+			<div id={"footer"} className="footer">
 				<div className="technologies">
 					<img
 						className="siteLogoImg"
@@ -54,10 +54,21 @@ export class Footer extends Component {
 				{
 					!!this.state.visitDetails &&
 					<div className="pageVisits">
-						<h6>Total Page Visits</h6>
-						<h1>
-							{this.state.visitDetails.count}
-						</h1>
+						<div className="visit-counts">
+							<div>
+								<h6>Page Visits</h6>
+								<h1>
+									{this.state.visitDetails.count}
+								</h1>
+							</div>
+							<div>
+								<h6>People</h6>
+								<h1>
+									{this.state.visitDetails.people}
+								</h1>
+							</div>
+						</div>
+							
 						<br/>
 						<h6>Last Visited from</h6>
 						<h4>
@@ -65,46 +76,15 @@ export class Footer extends Component {
 						</h4>
 					</div>
 				}
-				{/* {
-					!!this.state.ipDetails.exists &&
-					<div>
-
-						<br/><br/>
-						<div id={"ipDetailsContainer"}>
-							<div id={"ipDetailsLabel"}>
-								<span>
-									<span className="Dosis">IP Details</span>
-									<a id={"ipstackA"} href="https://ipstack.com" target="_blank" rel="noreferrer" title="API Source">
-										<img src={IpStackPng} alt="flag"/>
-									</a>
-								</span>
-							</div>
-							<div id={"ipAddressContainer"}>
-								<span id={"ipAddressLabel"}>IP Address</span>
-								<h3 className="Orbitron">{this.state.ipDetails.ip}</h3>
-							</div>
-							<div id={"ipLocationContainer"}>
-								<div id={"ipLocationLabel"}>Location</div>
-								<h3 className="Poppins">{this.state.ipDetails.city}, {this.state.ipDetails.region}</h3>
-								<h3 className="Orbitron">
-									<img src={this.state.ipDetails.flag} alt="flag" />
-									{this.state.ipDetails.country}
-								</h3>
-							</div>
-							<br/>
-							
-						</div>
-					</div>
-				} */}
 				{
-					!!this.state.ipDetails.exists &&
+					!!this.state.ipDetails?.exists &&
 					<div className="newIpDetailsContainer">
 						
 						<h6>Your IP Address</h6>
 						<h3 className="Orbitron ipAddressValue">{this.state.ipDetails.ip}</h3>
 						<br/>
 						<h6>Location IP Address</h6>
-						<h3 className="Poppins ipLocationPlace">{this.state.ipDetails.city}, {this.state.ipDetails.region}</h3>
+						<h4 className="ipLocationPlace">{this.state.ipDetails.city}, {this.state.ipDetails.region}</h4>
 						<h3 className="Orbitron ipLocationCountry">
 							<span>{this.state.ipDetails.country}</span>
 							<img src={this.state.ipDetails.flag} alt="flag" />

@@ -1,6 +1,6 @@
 #about {
 	background: #3c0054;
-	padding: 4rem 0;
+	padding: 6rem 0;
 	width: 100vw;
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
@@ -11,9 +11,14 @@
 		"expAnimationGC expAnimationGC expDetailsGC expDetailsGC expDetailsGC";
 }
 
+#about > * {
+	max-width: 100vw;
+}
+
 .aboutTitleGC {
 	grid-area: aboutTitleGC;
 	margin-bottom: 2rem;
+	max-width: 100vw;
 }
 
 .aboutDetailsGC {
@@ -32,6 +37,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
 .expTitleGC .myBTN {
@@ -367,5 +373,14 @@
 	#serv-cards {
 		grid-template-columns: 1fr;
 		padding: 1rem;
+	}
+}
+
+@media screen and (max-width: 548px) {
+	.expTitleGC {
+		display: block;
+		text-align: center;
+		margin: 2rem 0;
+		padding: 0;
 	}
 }

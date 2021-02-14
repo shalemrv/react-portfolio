@@ -1,5 +1,6 @@
 .footer {
 	background: black;
+	padding: 2rem 1rem;
 	border-top: 5px solid #008cff;
 	display: flex;
 	justify-content: space-around;
@@ -8,10 +9,19 @@
 
 	.pageVisits {
 		border-left: 5px solid gray;
-		padding-left: 1.5rem;
+		padding: 1rem 1.5rem;
+		margin: 1rem;
+		max-width: 20rem;
+
+		.visit-counts {
+			display: flex;
+			justify-content: space-between;
+		}
 	}
 	.technologies {
-		margin: 2rem;
+		padding: 1rem 1.5rem;
+		margin: 1rem;
+		max-width: 20rem;
 		.siteLogoImg {
 			width: 10rem;
 		}
@@ -29,9 +39,10 @@
 
 	.newIpDetailsContainer {
 		border-left: 5px solid gray;
-		padding-left: 1.5rem;
+		padding: 1rem 1.5rem;
 		margin: 2rem;
-
+		max-width: 20rem;
+		// background-color: red;
 		.ipDetailsLabel {
 			display: flex;
 			align-items: center;
@@ -50,6 +61,7 @@
 		}
 		.ipLocationPlace {
 			margin-top: 5px;
+			word-spacing: 0.25rem;
 		}
 		.ipLocationCountry {
 			display: flex;
@@ -59,7 +71,7 @@
 
 			img {
 				height: 1.5rem;
-				margin-right: 1rem;
+				margin-left: 1rem;
 				border-radius: 10px 3px 3px 10px;
 				border-radius: 3px;
 			}
