@@ -19,7 +19,7 @@ export class App extends Component {
 	state = {
 		portfolioData: {},
 		dataLoading : true,
-		loadingLabel : "Loading portfolio data...",
+		loadingLabel : "Loading data...",
 		imagesLoaded : 0
 	};
 
@@ -34,7 +34,7 @@ export class App extends Component {
 	}
 
 	getPortfolioData(){
-		axios.get(`${process.env.REACT_APP_API}/api/data.php`)
+		axios.get(`${process.env.REACT_APP_API}/api/portfolio/data.php`)
 		.then(
 			(httpResponse) => {
 				var apiResponse = httpResponse.data;

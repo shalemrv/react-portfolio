@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import "./PageLoader.scss";
 
 export class PageLoader extends Component {
 	render() {

@@ -124,7 +124,7 @@ export class DropMessageForm extends Component {
 		
 
 		axios.post(
-			`${process.env.REACT_APP_API}/api/messages.php?action=add`,
+			`${process.env.REACT_APP_API}/api/messages/manage.php?action=add`,
 			this.state.newMessage
 		)
 		.then(httpResponse=>{

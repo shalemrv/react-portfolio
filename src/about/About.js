@@ -166,7 +166,7 @@ class About extends Component{
 									</div>
 								</div>
 								<div className="duration">
-									<strong>1 year 6 months</strong>
+									<strong>1 year 7 months</strong>
 									<strong>August 2019 - Present</strong>
 								</div>
 								<div className="responsibilities">
