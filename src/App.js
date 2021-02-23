@@ -11,6 +11,14 @@ import Contact from './contact/Contact';
 import Footer from './footer/Footer';
 import swal from 'sweetalert';
 
+import cImg1 from './assets/carousel/1.jpg';
+import cImg2 from './assets/carousel/2.jpg';
+import cImg3 from './assets/carousel/3.jpg';
+import cImg4 from './assets/carousel/4.jpg';
+import cImg5 from './assets/carousel/5.jpg';
+import cImg6 from './assets/carousel/6.jpg';
+import cImg7 from './assets/carousel/7.jpg';
+
 import './App.css';
 
 import React, { Component } from 'react'
@@ -20,7 +28,15 @@ export class App extends Component {
 		portfolioData: {},
 		dataLoading : true,
 		loadingLabel : "Loading data...",
-		imagesLoaded : 0
+		carousel : [
+			cImg1,
+			cImg2,
+			cImg3,
+			cImg4,
+			cImg5,
+			cImg6,
+			cImg7
+		]
 	};
 
 	constructor(props){
@@ -34,7 +50,14 @@ export class App extends Component {
 	}
 
 	getPortfolioData(){
-		axios.get(`${process.env.REACT_APP_API}/api/portfolio/data.php`)
+		let auth2 = localStorage.getItem('auth2');
+		auth2 = auth2? auth2 : "";
+		axios.post(
+			`${process.env.REACT_APP_API}/api/portfolio/data.php`,
+			{
+				auth2
+			}
+		)
 		.then(
 			(httpResponse) => {
 				var apiResponse = httpResponse.data;
@@ -42,6 +65,7 @@ export class App extends Component {
 					swal("", apiResponse.message, "error");
 					return;
 				}
+				localStorage.setItem('auth2', apiResponse.auth2);
 				this.setState({ portfolioData : apiResponse.result});
 				window.setTimeout(()=>{
 					this.setState({ dataLoading : false });
@@ -58,7 +82,7 @@ export class App extends Component {
 			}
 		);
 	}
-	
+
 	componentDidMount(){
 		this.getPortfolioData();
 	}
@@ -71,7 +95,7 @@ export class App extends Component {
 				{
 					!this.state.dataLoading &&
 					<div className="page-content">
-						<Home/>
+						<Home carousel={this.state.carousel}/>
 						
 						<About skills={this.state.portfolioData?.skills}/>
 						

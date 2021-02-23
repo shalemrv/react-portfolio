@@ -137,6 +137,7 @@ export class DropMessageForm extends Component {
 			}
 
 			swal("Success", apiResponse.message, "success");
+			this.resetMessageForm();
 		})
 		.catch(res=>{
 			swal("Failed", "Something went wrong. Message could not be submitted", "error");

@@ -17,6 +17,7 @@ import phpPng from  "../assets/technologies/php.png";
 import vbPng from  "../assets/technologies/vb.png";
 import vstudPng from  "../assets/technologies/vstud.png";
 import htmlPng from  "../assets/technologies/html.png";
+import reactPng from  "../assets/technologies/reactjs.png";
 
 
 import './Projects.scss';
@@ -37,7 +38,8 @@ export class Projects extends Component {
 			php			: phpPng,
 			vb			: vbPng,
 			vstud		: vstudPng,
-			html		: htmlPng
+			html		: htmlPng,
+			react		: reactPng
 		}
 	};
 
