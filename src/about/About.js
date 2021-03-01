@@ -127,7 +127,7 @@ class About extends Component{
 						</div>
 						<div id={"resume-download"} className="flex-center">
 							<span className="myBTNContainer">
-								<a className="myBTN" href="src/experience/resume.pdf" download="Resume_ShalemRajV_202008_August.pdf">
+								<a className="myBTN" href="resume.pdf" download="Resume_ShalemRajV_202103_March.pdf">
 								</a>
 								<b>Download Resume</b>
 							</span>
@@ -166,7 +166,7 @@ class About extends Component{
 									</div>
 								</div>
 								<div className="duration">
-									<strong>1 year 7 months</strong>
+									<strong>1 year 8 months</strong>
 									<strong>August 2019 - Present</strong>
 								</div>
 								<div className="responsibilities">

@@ -19,7 +19,6 @@ import vstudPng from  "../assets/technologies/vstud.png";
 import htmlPng from  "../assets/technologies/html.png";
 import reactPng from  "../assets/technologies/reactjs.png";
 
-
 import './Projects.scss';
 
 export class Projects extends Component {

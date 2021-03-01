@@ -75,10 +75,8 @@ export class App extends Component {
 		)
 		.catch(
 			(res) => {
-				swal("", "Something went wrong on the server", "error");
-				window.setTimeout(()=>{
-					this.setState({ dataLoading : false });
-				}, 1500);
+				swal("", "Something went wrong on the server.", "error");
+				this.getPortfolioData();
 			}
 		);
 	}
