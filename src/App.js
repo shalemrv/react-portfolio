@@ -21,7 +21,7 @@ import cImg7 from './assets/carousel/7.jpg';
 
 import './App.css';
 
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export class App extends Component {
 	state = {
@@ -95,7 +95,7 @@ export class App extends Component {
 					<div className="page-content">
 						<Home carousel={this.state.carousel}/>
 						
-						<About skills={this.state.portfolioData?.skills}/>
+						<About skills={this.state.portfolioData?.skills} experience={this.state.experience}/>
 						
 						<Projects projectsList={this.state.portfolioData?.projectsList}/>
 
