@@ -1,0 +1,158 @@
+.expTitleGC {
+	padding-right: 5rem;
+	grid-area: expTitleGC;
+	margin-top: 5rem;
+	padding-bottom: 5rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	.myBTN {
+		margin-top: 2rem;
+	}
+
+	.expTitle {
+		margin-top: 3rem;
+	}
+
+	.resumeDownload {
+		font-size: 1.25rem;
+		text-align: center;
+		letter-spacing: 1.5px;
+	}
+}
+
+.expAnimationGC {
+	grid-area: expAnimationGC;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	padding: 1rem;
+	margin: 1rem;
+	width: 100%;
+	overflow-y: auto;
+
+	svg {
+		margin-top: 2rem;
+		height: 15vh;
+	}
+}
+
+.expDetailsGC {
+	grid-area: expDetailsGC;
+
+	padding: 1rem;
+	margin: 1rem;
+	width: 100%;
+	overflow-y: auto;
+
+	.expDetailsCC {
+		margin: 2rem;
+		margin-top: 0 !important;
+		border-radius: 10px;
+
+		.expCardGC {
+			margin-top: 1rem;
+			border-radius: 5px 5px 20px 20px;
+			background: white;
+			width: 100%;
+			color: #000000;
+			overflow: hidden;
+
+			* {
+				color: black;
+			}
+
+			.designation {
+				text-align: center;
+				padding: 5px;
+				background-color: #1b6ca8;
+				overflow: hidden;
+				letter-spacing: 0.25rem;
+				word-spacing: 0.75rem;
+
+				strong {
+					color: white;
+				}
+			}
+
+			.companyInfoCC {
+				display: grid;
+				grid-template-columns: auto 1fr;
+				color: #000000;
+
+				.companyLogo {
+					height: 50px;
+					width: 50px;
+					border-radius: 10px;
+					background-color: rgba(0, 0, 0, 0);
+					margin: 0.75rem;
+				}
+
+				.companyName {
+					font-size: 2rem;
+					padding-top: 0.5rem;
+				}
+				.companyLocation {
+					font-size: 0.75rem;
+				}
+			}
+
+			.duration {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				text-align: center;
+				padding: 3px 1.5rem;
+				background-color: #3eff5e;
+				overflow: hidden;
+
+				.timer {
+					font-size: 0.85rem;
+					word-spacing: 0.5rem;
+					letter-spacing: 0.25rem;
+				}
+			}
+
+			.responsibilitiesCC {
+				.responsibility {
+					display: grid;
+					grid-template-columns: auto 1fr;
+					padding: 5px;
+					margin: 5px 5px 5px 10px;
+
+					.work-desc {
+						padding: 0 10px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 678px) {
+	.expTitleGC {
+		display: block;
+		text-align: center;
+		margin: 2rem 0;
+		padding: 0;
+		padding-top: 3rem;
+		border-top: 5px solid white;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.expDetailsGC {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto;
+		grid-row-gap: 2rem;
+	}
+
+	.expDetailsCC {
+		margin: 0;
+		margin-right: 1rem;
+	}
+}
