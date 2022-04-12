@@ -24,7 +24,7 @@ class Timer extends Component{
 	}
 
 	calculateYMDifference(){
-		let expLoop	= new Date(`2019-08-01 00:00:00`);
+		let expLoop	= new Date(`2019-07-29 00:00:00`);
 		let now	= new Date();
 		let diff	= "";
 		
@@ -38,7 +38,7 @@ class Timer extends Component{
 		now = {
 			yy : now.getFullYear(),
 			mm : now.getMonth(),
-			dd : now.getDate()
+			dd : now.getDate() - 1
 		};
 
 		while(1){
@@ -66,7 +66,7 @@ class Timer extends Component{
 			diff += (exp.mm>1)? "s " : " ";
 		}
 		if(now.dd){
-			diff += ` ${now.dd} day`;
+			diff += ` ${now.dd} days`;
 			diff += (now.dd>1)? "s " : " ";
 		}
 

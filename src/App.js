@@ -42,6 +42,16 @@ export class App extends Component {
 	constructor(props){
 		super(props);
 		this.getPortfolioData = this.getPortfolioData.bind(this);
+
+		if(localStorage.getItem('lastFetched')){
+			let timeNow = new Date();
+			let lastFetched = new Date(localStorage.getItem('lastFetched'));
+			let diff = parseInt((timeNow - lastFetched) / 1000);
+			const expiry = 15 * 60; // 15 minutes
+			if(diff > expiry ){
+				localStorage.clear();
+			}
+		}
 	}
 
 	hideLoadingDiv(){
@@ -65,7 +75,9 @@ export class App extends Component {
 					swal("", apiResponse.message, "error");
 					return;
 				}
+
 				localStorage.setItem('auth2', apiResponse.auth2);
+				localStorage.setItem('lastFetched', apiResponse.lastFetched);
 				this.setState({ portfolioData : apiResponse.result});
 				window.setTimeout(()=>{
 					this.setState({ dataLoading : false });
@@ -76,7 +88,9 @@ export class App extends Component {
 		.catch(
 			(res) => {
 				swal("", "Something went wrong on the server.", "error");
-				this.getPortfolioData();
+				window.setTimeout(()=>{
+					this.getPortfolioData();
+				}, 5000);
 			}
 		);
 	}
