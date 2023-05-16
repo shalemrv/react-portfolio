@@ -14,4 +14,6 @@ Contact Form where you can leave a message expect a reply to your email in 48 ho
 
 Live at [Portfolio - shalemv.com](https://www.shalemv.com)
 
-## :no_entry_sign: :no_entry_sign: Repo abandoned due to older dependencies :no_entry_sign: :no_entry_sign:
+---
+---
+:no_entry_sign: :no_entry_sign: Repo abandoned due to older dependencies :no_entry_sign: :no_entry_sign:
