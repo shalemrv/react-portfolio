@@ -12,4 +12,6 @@ Contact Form where you can leave a message expect a reply to your email in 48 ho
 
 ## This project is built using `React.JS`, `SASS` and `PHP`
 
-Live at [Portfolio - shalemrv.com](https://www.shalemrv.com)
+Live at [Portfolio - shalemv.com](https://www.shalemv.com)
+
+## Repo abandoned due to older dependencies
